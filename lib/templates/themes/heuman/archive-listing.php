@@ -14,7 +14,11 @@ get_header(); ?>
 
 <section class="content">
 
-	<?php get_template_part('inc/page-title'); ?>
+	<header class="archive-header entry-header loop-header">
+        <h4 class="archive-title loop-title">
+            <?php do_action( 'epl_the_archive_title' ); ?>
+        </h4>
+    </header>
 
 	<div class="pad group">
 
@@ -34,18 +38,26 @@ get_header(); ?>
 				<?php do_action( 'epl_property_loop_end' ); ?>
 			</div><!--/.post-list-->
 
-			<?php get_template_part('inc/pagination'); ?>
-			<?php do_action( 'epl_property_loop_end' ); ?>
-		<?php endif; ?>
+			<div class="loop-footer">
+                <!-- Previous/Next page navigation -->
+                <div class="loop-utility clearfix">
+                    <?php do_action('epl_pagination'); ?>
+                </div>
+            </div>
+        
+        <?php
+		else :
+			?>
 			<div class="post-list group">
 				<div class="entry-header clearfix">
 					<h3 class="entry-title"><?php apply_filters( 'epl_property_search_not_found_title' , _e('Listing not Found', 'easy-property-listings') ); ?></h3>
 				</div>
 
 				<div class="entry-content clearfix">
-				<p><?php apply_filters( 'epl_property_search_not_found_message' , _e('Listing not found, expand your search criteria and try again.', 'easy-property-listings') ); ?></p>
-			</div>
-		</div>
+				    <p><?php apply_filters( 'epl_property_search_not_found_message' , _e('Listing not found, expand your search criteria and try again.', 'easy-property-listings') ); ?></p>
+                </div>
+            </div>
+        <?php endif; ?>
 	</div><!--/.pad-->
 
 </section><!--/.content-->
