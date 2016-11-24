@@ -4,10 +4,10 @@ Plugin URI: https://easypropertylistings.com.au/
 Contributors: mervb1
 Donate link: https://easypropertylistings.com.au/support-the-site/
 Tags: real estate, property, listings, CRM, contact management, reports, rental, commercial, business, rural, land, residential, property listings, property management, realtor, broker, contact, crm, australia, wp-property, wp property, wp rentals, wp-realestate, wp real estate, multisite, property, Merv Barrett, real estate connected
-Requires at least: 3.8
-Tested up to: 4.5
+Requires at least: 3.9
+Tested up to: 4.7
 
-Stable Tag: 3.0
+Stable Tag: 3.0.4
 
 License: GNU Version 2 or Any Later Version
 
@@ -15,44 +15,166 @@ Fast. Flexible. Forward-thinking solution for real estate agents using WordPress
 
 == Description ==
 
-Easy Property Listing is one of the most dynamic and feature rich Real Estate plugin for WordPress available on the market today.
+Easy Property Listings is one of the most dynamic and feature rich Real Estate plugin for WordPress available on the market today.
 
 An easy to use plugin that provides the needed functions to configure a dynamic real estate website in minutes. Packed with advanced features, shortcodes and templates letting you create real estate websites fast.
 
-> <strong>Theme Setup - Are you feeling lucky?</strong><br>
-> The latest release of Easy Property Listings includes a theme compatibility mode that works great for most themes. Once you have activated the plugin visit Dashboard > Easy Property Listings > Settings > Theme Setup. Before you enable the theme compatibility mode, add a listing and preview. If it looks great, you are good to go, however if your listing is too wide or your sidebar is in the wrong place activate Theme Compatibility mode. Next adjust the Theme Setup: Featured Images to adjust how your featured images appear. If you see two featured images play with the settings until it looks great.
-
-> <strong>Manual Theme Setup</strong><br>
-> To get the best result from Easy Property Listings on your real estate website you need to either manually [configure your theme](https://easypropertylistings.com.au/docs/setup-wordpress-theme-easy-property-listings-2-0/) using some copy and paste which gives you greater control over your listings. This will enable a better display and will make the plugin look great on any WordPress theme. If you need theme setup assistance first check the [theme support forum](https://easypropertylistings.com.au/support/forum/theme-support/) as we have already created many templates for popular WordPress themes.
-
-> <strong>Premium Support</strong><br>
-> The Easy Property Listings team does not provide support for the real estate plugin on the WordPress.org forums. One on one forum support is available to people who bought [Premium support](https://easypropertylistings.com.au/support/pricing/?utm_source=readme&utm_medium=description_tab&utm_content=premium_support&utm_campaign=wordpressorg) only.
-
-You should also check out the Local SEO, News SEO and Video SEO extensions to WordPress SEO, these of course come with support too.
+> <strong>Support</strong><br>
+> The Easy Property Listings team does not provide support for the real estate plugin on the WordPress.org forums. One on one forum support is available to people who bought [Support](https://easypropertylistings.com.au/support-ticket/?utm_source=readme&utm_medium=description_tab&utm_content=premium_support&utm_campaign=wordpressorg) only.
 
 **Features:**
 
-* Contact CRM System for managing leads and contacts.
-* Reports for tracking listings, rentals, sales and more.
+**Get Real Estate Online Faster Than Ever**
+
+Now you can promote your listings and automate lead generation
+
+* Easily integrated to any WordPress website.
+* Create websites that present listings beautifully.
+* Display listings in a responsive list or grid format.
+* 100s of ready to use theme templates available for free.
+* No code necessary. Infinite options. Just select and save.
+* Instantly works with popular themes Genesis, Headway, iThemes Builder.
+* Fully customisable and works with any Theme or framework.
+* Personalise for your market in seconds.
+* 100% responsive and mobile ready.
+
+**Real estate agents’ extension to the web**
+
+No "technical" experience necessary, its easy to use.
+
+* Built in help and tutorials if you get stuck.
+* Quick to setup, publish and update your listings.
+* The only plugin that lets you focus on listing and selling.
+* Add listings in a fast and efficient way saving you hours.
+* Start with the free version and activate add-ons as you grow.
+
+**Easy for Developers to Design and Customise**
+
+Fully customise to match your WordPress theme and design.
+
+* Fast, efficient, extensible code.
+* Over 150 custom fields, 7 post types all pre-configured.
+* The only plugin built to easily customise to match your design.
+* Easy to understand API’s with detailed documentation.
+* Customise the look and feel of the site exactly how you want.
+* Clean CSS means you don’t have to spend hours un-coding.
+* Add new templates in seconds and use with shortcodes.
+* Modular templates that are easy to change.
+
+**Developers Can Build Advanced Websites Fast**
+
+Your customer want features found on major real estate portals? All possible with Easy Property Listings.
+
+* Complex real estate website development made easy.
+* Filled with filters and hooks that allow full modification.
+* A fast and efficient plugin written using WordPress standards.
+* Create a settings plugin and use it again on other sites.
+* Plugin can be modified without much technical knowhow.
+* Available in a dozen languages and 26 currencies.
+* Upgrade your site with advanced add-ons.
+* API Documentation.
+
+**Powerful Shortcodes and Widgets**
+
+Shortcodes and widgets that let you filter, display and search listings.
+
+* Fast customisable listing search.
+* Advanced easy to customise widgets.
+* Packed with powerful shortcodes to display listings.
+* Display and filter listings by any criteria with shortcodes.
+* Randomly display listings with widgets, massive SEO benefits.
+* Template system allows infinite display possibilities.
+* Instantly generate an automatic open home list.
+
+
+**Listings Displayed Beautifully**
+
+Multiple agent details not a problem, its built in.
+
+* Instantly sort displayed listings by price, date, location.
+* Link to virtual tours, floor plans, mini sites, and more.
+* Agent profile box loaded with your social media and details.
+* Visitors can add open homes to their calendar with a click.
+* Flag listing, new, under contract, sold and customise.
+* Photo gallery and Google Maps.
+* Embed online property videos.
+
+**Add and Edit Listings Easily**
+
+Filled with rich and useful features that makes publishing listings online a breeze.
+
+* Easily add, update and manage unlimited listings fast.
+* Optimised for Search Engines (SEO) with separate listing types.
+* Pricing system for today that you won’t find in any other plugin.
+* Attach landlords and sellers details to listings for quick access.
+* Listings have different needs, this handles them all.
+* Add unlimited property features.
+
+**Listing Management Redefined**
+
+Complete real estate plugin built for any sized company or portal.
+
+* Easy to sort, search and manage listings.
+* Dashboard widgets gives you an instant overview.
+* Important listing details available with a glance.
+* Instantly track your real estate business.
+
+**Contact and Lead Management with Built in CRM**
+
+Prospecting that works how you do.
+
+* Capture contacts and manage leads.
+* Tag contacts so they stand out as a priority.
+* Email contacts, track conversations and activities.
+* Save contact info for quick reference when prospecting.
+* Work your leads and never forget to follow-up again.
+* Instantly filter contacts by custom tags, just click.
+
+**Advanced Reporting**
+
+Track your business growth with beautiful instant, reports
+
+* Beautiful graph of what your business is doing.
+* Compare listings and sales, rentals and leased results.
+* Filter listings by any period of time, instant KPI reports.
+* Tack market progress over any period of time
+
+**Enhance and Extend with Premium Add-Ons**
+
+Grow your online success with premium add-ons
+
+* 300+ listings on one map… sold! [Advanced Mapping](https://easypropertylistings.com.au/extensions/advanced-mapping/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=wordpressorg).
+* Your a winner, be proud and show off your Awards.
+* Let your happy customers share how good you are with Testimonials.
+* Print customised Brochures and stock lists easily.
+* Enhanced your agents online profiles with the Staff Directory.
+* Location, location, location… Powerful SEO strategy with Location Profiles.
+* Beautiful image Sliders with, thousands of possibilities.
+* Let buyers and tenants know whats new with Email Alerts.
+* Online CMA Market Reports automatically attached to your listings.
+* Dedicated add-on for Importing Listings from CSV and XML.
+* More add-ons in development to further extend an already awesome plugin.
+* Extend with many [add-ons](https://easypropertylistings.com.au/extensions/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=wordpressorg)
+
+**Dedicated Support**
+
+Extensive near instant response to support, we just want to help.
+
+* Lots of free tutorials & how to videos.
+* Dedicated online API documentation.
+* Free, easy to follow online documentation.
+* Support plans for fast detailed help and theme setup.
+
+**More Features**
+
 * Multiple listing types are supported because not everyone is a residential properties specialist. You can list rentals, commercial, land, rural and businesses just as easily.
 * Flexible pricing options like "no price", POA and necessary real estate options like under offer & auction.
-* A fast and efficient plugin written using WordPress standards.
-* A plugin that works with any WordPress any theme giving you the flexibility to have the site design that suits you. Support for popular frameworks like Genesis and iThemes Builder, just activate and add your listings.
 * Developed from a real estate agents perspective to make it easy and quick to add and update listings.
 * Completely location independent with extensive currency support, so it doesn’t matter where listing are in the world.
 * Geo-locate the property coordinates with a press of a button and display a Google Map.
 * iCal calendar appointment support for inspection times. Just click and add to your calendar.
-* Search Widget: Supports tabs, location, land, price, address and more; search everything.
-* Extend with [Advanced Mapping](https://easypropertylistings.com.au/extensions/advanced-mapping/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=wordpressorg) extension that handles hundreds of listings, dozens of options added with a simple shortcode.
-* Buttons for floor plans, and external links.
-* Manage listings with ease and check prices with the graph.
 * Support for Under Offer and no price listings, you name it, it works.
 * Currency support for non-dollar currencies.
-* Lots of filters and developer hooks allowing you to add additional information and make changes quickly and easily.
-* Responsive CSS with grid and list views.
-* Sort listings by price and date.
-* Create your own real estate contact generation system around your listings and location.
-* Extend with many [add-ons](https://easypropertylistings.com.au/extensions/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=wordpressorg)
 
 **Widgets**
 
@@ -63,7 +185,7 @@ You should also check out the Local SEO, News SEO and Video SEO extensions to Wo
 
 **Shortcodes**
 
-Several short codes to insert your listings into posts and pages with many customisable options. [Shortcode documentation](https://easypropertylistings.com.au/documentation/?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg). These short codes allow you to display listings any way and anywhere you like.
+Several short codes to insert your listings into posts and pages with many customisable options. [Shortcode documentation](http://codex.easypropertylistings.com.au/category/25-shortcodes?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg). These short codes allow you to display listings any way and anywhere you like.
 
 * [listing]
 * [listing_category]
@@ -74,17 +196,21 @@ Several short codes to insert your listings into posts and pages with many custo
 * [listing_auction]
 * [epl_contact_form]
 
-<strong>Listing</strong><br>
- The [listing] shortcode allows you to output your listings on pages and posts with advanced filtering options for listing types, order, status filtering, locations and much more which you can [read about the settings and options here](https://easypropertylistings.com.au/docs/listing-short-code/?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg).
+**Listing**
 
-<strong>Listing Open</strong><br>
+The [listing] shortcode allows you to output your listings on pages and posts with advanced filtering options for listing types, order, status filtering, locations and much more which you can [read about the settings and options here](http://codex.easypropertylistings.com.au/article/24-listing?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg).
+
+**Listing Open**
+
 The [listing_open] shortcode quickly outputs listings that have scheduled open for inspection times. Use this on posts so your site will always have an up-to-date list of properties open for inspection. Use the [listing_open post_type="property" template="table"] or for rentals and slimmer [listing_open post_type="rental" template="table_open"] option to create a slim list of listings.
 
-<strong>Listing Search</strong><br>
-The [listing_search] shortcode allows you to place the search widget anywhere you like. Just added to the plugin are new styles to output [listing_search style="wide"] and [listing_search style="slim"] variations. You can also enable the tabbed option with [listing_search post_type="property,rental,land"] and you can adjust the tab labels from the plugin settings page. More [details about the listing_search shortcode can be found here](https://easypropertylistings.com.au/docs/listing_search-short-code/?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg). If you use the search widget you can easily select your options from the widget editor. Enable the tabbed search by multi selecting the listing types with Ctrl on your pc or Command on a mac keyboard.
+**Listing Search**
 
-<strong>Listing Category</strong><br>
-Use the [listing_category] short code to filter listings by any variable you want to use. Easy Property Listings has over 30 variables available for each listing type to create specialised pages for anything. Read the [detailed documentation](https://easypropertylistings.com.au/docs/listing-category-short-code/?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg) about this advanced shortcode.
+The [listing_search] shortcode allows you to place the search widget anywhere you like. Just added to the plugin are new styles to output [listing_search style="wide"] and [listing_search style="slim"] variations. You can also enable the tabbed option with [listing_search post_type="property,rental,land"] and you can adjust the tab labels from the plugin settings page. More [details about the listing_search shortcode can be found here](http://codex.easypropertylistings.com.au/article/122-listingsearch?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg). If you use the search widget you can easily select your options from the widget editor. Enable the tabbed search by multi selecting the listing types with Ctrl on your pc or Command on a mac keyboard.
+
+**Listing Category**
+
+Use the [listing_category] short code to filter listings by any variable you want to use. Easy Property Listings has over 30 variables available for each listing type to create specialised pages for anything. Read the [detailed documentation](http://codex.easypropertylistings.com.au/article/26-listingcategory?utm_source=readme&utm_medium=description_tab&utm_content=documentation_link&utm_campaign=wordpressorg) about this advanced shortcode.
 
 **Use any theme**
 
@@ -110,31 +236,40 @@ More information at [Easy Property Listings.com.au](https://easypropertylistings
 
 **Follow this plugin on [GitHub](https://github.com/easypropertylistings/Easy-Property-Listings)**
 
-<strong>Advanced Mapping</strong><br>
+**Advanced Mapping**
+
 [Advanced Map](https://easypropertylistings.com.au/extensions/advanced-mapping/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_advanced_map) Create a beautiful map showcasing your listings with a powerful shortcode.
 
-<strong>Brochures and Stock List Extension</strong><br>
+**Brochures and Stock List Extension**
+
 With the [brochures](https://easypropertylistings.com.au/extensions/brochures/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_brochures) extension for Easy Property Listings you can create printable brochures and stock lists for your listings. There are several options to control the brochure styles and templates. Or create your own!
 
-<strong>Frontend Submissions</strong><br>
+**Frontend Submissions**
+
 [Frontend Submissions](https://easypropertylistings.com.au/extensions/frontend-submissions/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_frontend_submissions) Frontend Submissions provides a the ability to submit listings via a frontend form for review using a shortcode. They can also edit submitted listings from the frontend of your website.
 
-<strong>Listing Alerts</strong><br>
+**Listing Alerts**
+
 [Listing Alerts](https://easypropertylistings.com.au/extensions/listing-alerts/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_listing_alerts) Schedule email alerts to subscribers with HTML email support and customisable messages.
 
-<strong>Location Profiles</strong><br>
+**Location Profiles**
+
 [Location Profiles](https://easypropertylistings.com.au/extensions/location-profiles/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_location_profiles) With this plugin, you can add detailed suburb, city or neighbourhood profiles automatically to your listings in that location.
 
-<strong>Market Research</strong><br>
+**Market Research**
+
 [Market Research](https://easypropertylistings.com.au/extensions/market-research/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_market_research). With the Market Research extension for Easy Property Listings you can import property sales data and dynamically display it on your listings in a matching location.
 
-<strong>Sliders</strong><br>
+**Sliders**
+
 [Sliders](https://easypropertylistings.com.au/extensions/sliders/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_slider) The Sliders extension allows you to effortlessly create beautiful listing galleries that include numerous options and are fully responsive.
 
-<strong>Staff/Agent Directory</strong><br>
+**Staff/Agent Directory**
+
 [Staff/Agent Directory](https://easypropertylistings.com.au/extensions/staff-directory/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_staff_directory) Give your real estate agents and staff an enhanced author profile on your listings and manage staff members with this extension.
 
-<strong>Testimonial Manager</strong><br>
+**Testimonial Manager**
+
 [Testimonial Manager](https://easypropertylistings.com.au/extensions/testimonial-manager/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_testimonial_manager) Testimonials can be an effective way to get more listings. They add credibility and builds trust. With this plugin, quickly add testimonials and have them link with properties in specific locations.
 
 [Many more extensions can be found here](https://easypropertylistings.com.au/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extensions).
@@ -156,22 +291,46 @@ Easy Property Listings needs help for translation:
 11. Russian
 12. Swedish
 13. Ukrainian
+14. Arabic
 
 Would you like to help translate the plugin into more languages? [Join our Translations Forum](https://easypropertylistings.com.au/support/forum/translations/).
 
 == Installation ==
 
-1. Upload plugin zip contents to wp-contents/plugin directory and activate the plugin.
-2. Go to Easy Property Listings > Settings and enable your listing types and press save.
-3. Customise your labels, tweak the display, all in minutes from Easy Property Listings > Setting page.
-4. Add a listing as you would a post. Check the help guide inside the plugin. Dashboard > Easy Property Listings > Help. These instructions are also accessible to authors.
-5. Create blank pages for each listing type you enable so you can easily add the archive page to your WordPress menus. There are detailed instructions which you can access from your Dashboard > Easy Property Listings > Help & Help > Getting Started
-6. The latest release of Easy Property Listings includes a theme compatibility mode that works great for most themes. Once you have activated the plugin visit Dashboard > Easy Property Listings > Settings > Theme Setup. Before you enable the theme compatibility mode, add a listing and preview. If it looks great, you are good to go, however if your listing is too wide or your sidebar is in the wrong place activate Theme Compatibility mode. Next adjust the
+**Automatic installation**
+
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't even need to leave your web browser. To do an automatic install, log in to your WordPress admin panel, navigate to the Plugins menu and click Add New.
+
+In the search field type "Easy Property Listings" and click Search Plugins. Once you've found the plugin you can view details about it such as the point release, rating and description. Most importantly of course, you can install it by clicking Install Now.
+
+**Manual installation**
+
+The manual installation method involves downloading the plugin and uploading it to your web server via your favourite FTP application.
+
+1. Download the plugin file to your computer and unzip it
+2. Using an FTP program, or your hosting control panel, upload the unzipped plugin folder to your WordPress installation's wp-content/plugins/ directory.
+3. Activate the plugin from the Plugins menu within the WordPress admin.
+
+**Theme Setup - Are you feeling lucky?**
+
+Easy Property Listings includes a theme compatibility mode that works great for most themes. Once you have activated the plugin visit Dashboard > Easy Property Listings > Settings > Theme Setup. Before you enable the theme compatibility mode, add a listing and preview. If it looks great, you are good to go, however if your listing is too wide or your sidebar is in the wrong place activate Theme Compatibility mode. Next adjust the Theme Setup: Featured Images to adjust how your featured images appear. If you see two featured images play with the settings until it looks great.
+
+**Manual Theme Setup**
+
+To get the best result from Easy Property Listings on your real estate website you need to manually perform [Theme Setup](http://codex.easypropertylistings.com.au/article/49-theme-setup) using some copy and paste which gives you greater control over your listings. This will enable a better display and will make the plugin look great on any WordPress theme. If you need theme setup assistance first check the [theme support forum](https://easypropertylistings.com.au/support/forum/theme-support/) as we have already created many [Templates for WordPress themes](http://codex.easypropertylistings.com.au/article/185-theme-templates).
+
+**Getting Started**
+
+1. Go to Easy Property Listings > Settings and enable your listing types and press save.
+2. Customise your labels, tweak the display, all in minutes from Easy Property Listings > Setting page.
+3. Add a listing as you would a post. Check the help guide inside the plugin. Dashboard > Easy Property Listings > Help. These instructions are also accessible to authors.
+4. Create blank pages for each listing type you enable so you can easily add the archive page to your WordPress menus. There are detailed instructions which you can access from your Dashboard > Easy Property Listings > Help & Help > Getting Started
+5. The latest release of Easy Property Listings includes a theme compatibility mode that works great for most themes. Once you have activated the plugin visit Dashboard > Easy Property Listings > Settings > Theme Setup. Before you enable the theme compatibility mode, add a listing and preview. If it looks great, you are good to go, however if your listing is too wide or your sidebar is in the wrong place activate Theme Compatibility mode. Next adjust the
 Theme Setup: Featured Images to adjust how your featured images appear. If you see two featured images play with the settings until it looks great.
-7. Add widgets, shortcodes and listings.
-8. Have a cup of coffee as you'll be amazed at how quickly and easily you created an advanced Real Estate listing website.
-9. For detailed setup instructions, visit the official [Documentation](https://easypropertylistings.com.au/documentation/) page.
-10. Visit the [Extension Store](https://easypropertylistings.com.au/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extensions) to further enhance your real estate website with cool SEO focused tools.
+6. Add widgets, shortcodes and listings.
+7. Have a cup of coffee as you'll be amazed at how quickly and easily you created an advanced Real Estate listing website.
+8. For detailed setup instructions, visit the official [Documentation](http://codex.easypropertylistings.com.au/) page.
+9. Visit the [Extension Store](https://easypropertylistings.com.au/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extensions) to further enhance your real estate website with cool SEO focused tools.
 
 == Frequently Asked Questions ==
 
@@ -181,11 +340,11 @@ Absolutely, Easy Property Listings is built from the ground up for scale, speed 
 
 = We want to display less or more info on the archive and single listing views, how can we create a unique customised look? =
 
-You can use the Easy Property Listings template loading system that lets you place all the plugin templates inside themes/YOUR_THEME/easypropertylistings/ folder and edit everything. You can [read more about how to do that here](https://easypropertylistings.com.au/docs/create-custom-theme-templates-using-included-hooks/?utm_source=readme&utm_medium=faq_tab&utm_content=templates&utm_campaign=epl_documentation).
+You can use the Easy Property Listings template loading system that lets you place all the plugin templates inside themes/YOUR_THEME/easypropertylistings/ folder and edit everything. You can [read more about how to do that here](http://codex.easypropertylistings.com.au/article/303-how-to-create-custom-widget-templates-using-the-theme-template-loader?utm_source=readme&utm_medium=faq_tab&utm_content=templates&utm_campaign=epl_documentation).
 
 = How do I setup my WordPress theme to work with Easy Property Listings 2.0 =
 
-In order for correct integration with your WordPress theme please follow these instructions [WordPress Theme configuration instructions](https://easypropertylistings.com.au/section/theming/).
+In order for correct integration with your WordPress theme please follow these instructions [WordPress Theme configuration instructions](http://codex.easypropertylistings.com.au/article/49-theme-setup).
 
 These instructions are also located inside the plugin. Visit Dashboard > Easy Property Listings > Help > Getting Started > Setup your theme to work with the plugin
 
@@ -222,190 +381,300 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Screenshots ==
 
-1. Archive Page Display with Listing Widgets
-2. Admin view of Property listing type
-3. Custom fields configured for a Property Listing type
-4. User Profile options for author box
-5. Search Widget adapts to child theme style
-6. Home open shortcode and Multi Author widget
+1. Edit Contact Details
+2. Listing Reports
+3. Archive Page Display with Listing Widgets
+4. Admin view of Property listing type
+5. Custom fields configured for a Property Listing type
+6. User Profile options for author box
+7. Search Widget adapts to child theme style
+8. Home open shortcode and Multi Author widget
 
 == Changelog ==
 
-= 3.0 March 14, 2016 =
+= 3.1 November 24, 2016 =
 
-Tweak: Textdomain and languages files renamed. Changed from epl to easy-property-listings for the WordPress.org translation initiative.
-New: Every epl_action present in the $_GET or $_POST is called using WordPress do_action function in init.
-Tweak: Radio options when adding listings converted to checkboxes to slim down the admin pages.
-Fix: Ducted Heating additional features now displays in feature list.
-Fix: Fully fenced option now displays in feature list.
-Tweak: Optimise Admin Listing queries.
-Tweak: Removed double display of Under Offer in admin listing list.
-Tweak: Leased rental listings now display the weekly rent amount in admin.
-Tweak: Commercial Lease listing details improved in admin list.
-Tweak: Sold price displays in admin.
-Fix: Date Available fix for year.
-New: epl_get_property_available filter allows customising date format.
-Tweak: External links function improved.
-Tweak: Added additional plugin file security access to prevent file reading outside of WordPress.
-Fix: Number Formatting function PHP warning fixed.
-Fix: is_epl_post function to prevent error when no posts are activated.
-Tweak: Commercial auction listing support.
-New: Contacts and form system for managing listing leads and history of contact.
-New: contact_capture shortcode // Needs Author id of page and URL.
-New: Contact System for Lead Generation and Capture.
-New: Form API supports editor.
-New: Dashboard Widget Listing and Contact Activity Feed.
-New: Date Picker updated JS for improved usage and improved compatibility with themes and plugins.
-Tweak: Code Docblocks created for http://docs.easypropertylistings.com.au code reference.
-New: Link a contact with a listing and display details and quick access to contact.
-New: Error tracking and debug logging helper functions.
-New: Form API supports sections breaks.
-New: Contextual help tab added to Add/Edit Listing page.
-New: Inspection date format now customisable from settings.
-Tweak: Extension license updater updated.
-Tweak Added additional map CSS classes to improve Google Map output with some themes.
-New: Adjustable Map pin when editing a listing and setting coordinates. Drag the map pin to adust the position.
-Tweak: Imported values of 0 no longer display on commercial listings.
-Tweak: epl_render_html_fields allows for css class set in the field array of meta-boxes.
-Tweak: Commercial authority default type is now For Sale instead of Auction.
-Tweak: Converted Radio options to tick boxes to reduce space.
-Tweak: Commercial auction listing support.
-Tweak: Bedrooms allow studio option.
-Tweak: Applied thousands separator to land sizes using settings.
-Tweak: Allow for .00 and .0 when adding listing prices.
-Tweak: Toilet supports decimal.
-Tweak: Additional Features increased to three columns to minimise space with single checkboxes.
-Tweak: Listing price, sale, and rental price now supports decimal values when saving.
-Tweak: Bond supports decimal figures.
-Tweak: Translation strings fixed.
-Tweak: m2 html character added.
-Tweak: Listings with prices set to 0 like bond no longer display in admin.
-Fix: Rental listing when using price text the rental period no longer displays in admin.
-Tweak: Pagination loading globally for use in admin.
-New: Pagination enhanced to enable adjustment of output.
-Fix: Old function in metaboxes removed as it inadvertently caused additional unnecessary queries.
-New: Generate visual reports on your listing KPI status so you can track your listings and sales.
-Tweak: [listing_search] shortcode using new API and allows for custom templates. Place the template in themes/your_theme/easypropertylistings/templates/ folder.
-Tweak: Enhanced Search Object thanks to codewp allows widget template override.
-New: Search Widget and [listing_search] shortcode allows for property status option.
-New: Search template now editable using epl_get_template_part.
-New: Search widget and [listing_search] shortcode order option added to allow adjusting of field order.
-New: Second agent field allows for searching users.
-New: Search upgraded to object thanks to codewp.
-New: Search for second listing author on listings.
-New: Search widget and [listing_search] shortcode status search option added.
-New: Search widget and [listing_search] shortcode support any registered post types.
-New: Search widget and [listing_search] shortcode support single drop down selection for price, land, building.
-Fix: Session start less likely to cause issues with certain server configurations.
-Fix: listing_open shortcode no longer displays sold or leased listings.
-New: Additional customisation of shortcode-listing.php template part.
-Tweak: Listing Shortcode adjusted for better processing of options.
-New: [listing_auction] shortcode.
-New: Contact shortcode. [epl_contact_form]
-New: Contact Form Widget.
-New: Sort by location A-Z added to front end listing filter.
-Tweak: iThemes Builder archive-listing.php and single-listing.php templates updated to improve render_content theme function.
-New: Allow extensions to use core templates for output.
-Fix: Added translation string for P.A. label.
-Fix: Translation of land size unit.
-Tweak: LinkedIn will use full URL or fallback.
-New: Default embedded video width adjustable from settings.
-New: Video links now support additional formats like Vimeo using the WordPress wp_oembed.
-New: Listing widget now loadable using epl_get_template_part thanks to codewp.
-Tweak: Widget descriptions added to widget management.
-Fix: Stray ul tag with search widget tabbing.
-Tweak: Improved get_additional_features_html function for additional features and added epl_get_additional_features_html filter
-New: Contact tags taxonomy added for creating your own contact tags.
-Tweak: Listing heading function enhanced for other post types.
-Tweak: Building value now accepts decimal.
-New: Support for Twenty Sixteen theme.
-Tweak: Active theme function enhanced for older WordPress versions.
-New: Templates added for Twenty Fourteen Theme to improve display.
-New: Archive title action added for easier implementation and filters to adjust output.
-New: epl_feedsync_format_strip_currency function to strip currency during import with epl_feedsync_format_strip_currency_symbol filter to modify string replacement search.
-New: epl_archive_title_search_result Filter, default “Search Result”.
-New: epl_archive_title_fallback Filter, default “Listing”.
-New: epl_archive_title_default Filter.
-New: epl_get_active_theme Filter.
-New: epl_active_theme Filter.
-New: epl_active_theme_name Filter.
-New: epl_active_theme_prefix Filter.
-New: epl_archive_title_fallback Filer.
-Tweak: epl_strip_tags function added filter to adjust HTML tag stripping.
-New: epl_contact_form_description_allowed_tags Filter.
-New: epl_get_property_feature_taxonomy filter allowing adjustment of listing features.
-New: epl_get_property_auction filter allows adjustment of auction date format.
-New: epl_get_property_auction_label filter to adjust the Auction label.
-New: epl_get_property_price_display Filter.
-New: epl_get_property_price_sold_display Filter.
-New: epl_get_property_price_sold_date Filter.
-New: epl_get_property_rent Filter.
-New: epl_get_property_bond Filter.
-New: epl_get_property_land_category Filter.
-New: epl_commercial_auction_label Filter.
-New: epl_get_property_auction_date Filter.
-New: epl_get_price_plain_value Filter.
-New: epl_get_price Filter.
-New: epl_get_price_sticker Filter.
-New: epl_get_price_in_list Filter.
-New: epl_get_property_commercial_category Filter.
-New: epl_get_property_year_built_label Filter.
-New: epl_get_property_year_built Filter.
-New: epl_get_property_bath_label Filter.
-New: epl_get_property_bathrooms_label Filter.
-New: epl_get_property_bath Filter.
-New: epl_get_property_bed_label Filter.
-New: epl_get_property_bedrooms_label Filter.
-New: epl_get_property_bed Filter.
-New: epl_get_property_rooms_label Filter.
-New: epl_get_property_rooms Filter.
-New: epl_get_parking_spaces_label Filter.
-New: epl_get_property_parking Filter.
-New: epl_get_property_garage_label Filter.
-New: epl_get_property_garage Filter.
-New: epl_get_property_carport_label Filter.
-New: epl_get_property_carport Filter.
-New: epl_get_property_air_conditioning_label Filter.
-New: epl_get_property_air_conditioning Filter.
-New: epl_get_property_pool_label Filter.
-New: epl_get_property_pool Filter.
-New: epl_get_property_security_system_label Filter.
-New: epl_get_property_security_system Filter.
-New: epl_get_property_land_area_label Filter.
-New: epl_get_property_land_value Filter.
-New: epl_get_property_building_area_label Filter.
-New: epl_get_property_building_area_value Filter.
-New: epl_get_property_new_construction_label Filter.
-New: epl_get_property_new_construction Filter.
-New: epl_get_property_com_car_spaces_label Filter.
-New: Dynamic additional features epl_get_{meta_key}_label Filter.
-New: epl_get_additional_features_html Filter.
-New: epl_get_additional_rural_features_html Filter.
-New: epl_get_additional_commerical_features_html Filter.
-New: epl_get_features_from_taxonomy Filter.
-New: epl_checkbox_single_check_options Filter.
-New: epl_property_sub_title_plus_outgoings_label Filter.
-New: epl_property_sub_title_available_from_label Filter.
-New: epl_property_sub_title_available_now_label Filer.
-New: epl_get_formatted_property_address filter.
-New: epl_get_property_category filter.
-New: epl_get_property_tax.
-New: epl_property_sub_title_property_features filter for Property Features label.
-New: epl_property_sub_title_plus_outgoings filter for Plus Outgoings label.
-New: epl_property_sub_title_commercial_features filter for Commercial Features label.
-New: epl_property_sub_title_rural_features filter for Rural Features label.
-New: epl_switch_views_sorting_title_sort filter for Sort label.
-New: epl_switch_views_sorting_title_list filter for List label.
-New: epl_switch_views_sorting_title_grid filter for Grid label.
-New: epl_pagination_before_page_numbers filter.
-New: epl_pagination_after_page_numbers filter.
-New: epl_pagination_single_content_text Filter
-New: epl_pagination_single_tag Filter.
-New: epl_pagination_single Filter.
-New: epl_pagination_single_dot_tag Filter.
-New: epl_pagination_single_dot_content Filter.
-New: epl_pagination_single_dot_attributes Filter.
-New: epl_pagination_single_dot Filter.
+* New: Rebuilt templates including additional wrapper for better grid layout.
+* New: Added legacy CSS option to prevent using new stylesheets when updating to 3.1 ensuring your listing display remains consistent.
+* New: Enhanced grid wrapper CSS to better display listings in a grid format and improved CSS by splitting global style.css with style-structure.css allowing for better compatibility with themes.
+* New: Class based front JS scripts for enhanced compatibility.
+* New: Implemented cron checking in extension license handler and updated license updater EDD code.
+* New: Added filter for epl_get_contacts_args to enable contact form field changes.
+* New: Added epl_get_next_contact_link_query filter to adjust contact query.
+* New: Added epl_contact_access filter to adjust contact system access by user level.
+* New: Contextual help tab on listing pages.
+* New: Added epl_author_description_html filter to adjust the author description.
+* New: Cron added to handle scheduled events like license checking and updating.
+* New: Auction epl_auction_feed_format date format filter added.
+* New: Added epl_get_property_com_rent to allow commercial rent price formatting.
+* New: Search radio option and checkbox added.
+* New: Refactored search into class based code.
+* New: Commercial search added (beta) disabled by default.
+* New: Conditional post types added for checking on enabled  listing types.
+* New: Support for DIVI theme framework.
+* New: Added epl_meta_commercial_category_value to adjust commercial category.
+* New: Parse EPL shortcodes for meta queries.
+* New: Widget template no image added.
+* New: Sorting order function added.
+* New: Pagination option added to all listing shortcodes pagination = 'on' default.
+* New: [listing_category] shortcode added compare option. category_compare = 'IN' usage is based on SQL query options. 'IN','NOT IN','BETWEEN','NOT BETWEEN'
+* New: Wrapper added to templates to improve display and  provide even grid spacing.
+* New: Added search address to separate from ID search.
+* New: No image icon for listing attachments.
+* New: Display lease price if nothing selected.
+* New: Added epl_get_property_price_lease_display filter to control lease price display.
+* New: License checker for updates set to daily and constant added to improve plugin page performance and reduce the update checker frequency.
+* New: Load custom stylesheet from active_theme/easypropertylistings/style.css
+* New: Added Pet Friendly options.
+* New: Search frontend radio option epl_frontend_search_field_radio.
+* New: Search frontend multiple checkbox option epl_frontend_search_field_checkbox_multiple.
+* New: Search placeholders added to text fields.
+* New: Correctly wrap epl_the_excerpt.
+* New: Divi theme support.
+* New: Select multiple added as custom field ability.
+* New: Custom field option checkbox_option.
+* New: Pet Friendly option added to rentals.
+* New: Open Parking spaces added to listings.
+* New: Prefixed additional css in templates for better styling.
+* Tweak: License handler using https.
+* Tweak: Improvements to contact actions.
+* Tweak: License styling improved for better WordPRess UX.
+* Tweak: LinkedIn link adjusted for worldwide usage.
+* Tweak: get_property_meta improved.
+* Tweak: Commercial leased sticker corrected.
+* Tweak: property_land_area adjustment for numerical value.
+* Tweak: Commercial and land category correctly displaying.
+* Tweak: On activation the Property post type is enabled by default.
+* Tweak: Improvements to listing widget.
+* Tweak: Inspection time and date format improved.
+* Tweak: File option added to external links for floorplans.
+* Tweak: Template wrappers prefixed for details, property meta, icons, address, content.
+* Tweak: Languages moved for better compatibility with translation plugins.
+* Tweak: Listing search widget status label.
+* Tweak: Reset page sorting when performing a search on a sub page with a widget or shortcode.
+* Tweak: Adjusted price and rental search ranges.
+* Tweak: Translation fix for rent period.
+* Tweak: Numerous changes to CSS to improve listing display and responsiveness.
+* Tweak: Settings checkbox options display correctly.
+* Tweak: Improvements to author box functions for multi-author.
+* Tweak: LinkedIn author link adjusted.
+* Fix: Conditional tags when lo listing types are activated.
+* Fix: Improved onclick links in external, web links to conform with new JS class.
+* Fix: Commercial car spaces displaying incorrectly.
+* Fix: Conditional tags improved.
+
+= 3.0.4 May 4, 2016 =
+
+* Fix: Internal help videos gzip error, using iframe instead.
+* Fix: Corrected incorrect stray tags on internal welcome page.
+
+= 3.0.3 May 2, 2016 =
+
+* New: Setting to disable Google Maps API if already added by theme or other plugin.
+* New: Ability to set a Google Maps API Key.
+* Fix: Renamed misspelled Property on linked contact.
+* Fix: Trailing ul tag on search widget.
+* Fix: Implemented better timezone support for open for inspection. Requires WordPress 3.9.
+* Tweak: Tighter spacing on dropdown contact list.
+* Tweak: Updated translations file.
+* Tweak: Capital c for contact post type.
+* Tweak: Dashboard activity widget improved CSS display.
+* Tweak: Dashboard activity comments better labeled.
+* Tweak: Internal links to documentation corrected.
+
+= 3.0.2 April 10, 2016 =
+
+* Fix: Featured Listing removed redundant no option.
+
+= 3.0.1 April 8, 2016 =
+
+* Tweak: Versioning to all CSS and JS.
+* New: Arabic translation.
+* Tweak: Updated German Translation.
+* Tweak: Updated French Translation.
+* Tweak: Updated Dutch Translation.
+* Fix: Search by Address and Property ID correctly searches the listing Title. In order to search by property ID, add the property ID to the listing title.
+* New: Customise the EPL - Contact Form Widget Submit Label.
+* Tweak: Added Form styling to contact form.
+* Tweak: Corrected additional translation strings with contact form labels.
+* Tweak: Corrected spacing in extension plugin updates.
+* Tweak: Renamed EPL - Contact Form Subscribe label to Submit.
+
+= 3.0 March 30, 2016 =
+
+* Tweak: Textdomain and languages files renamed. Changed from epl to easy-property-listings for the WordPress.org translation initiative.
+* New: Every epl_action present in the $_GET or $_POST is called using WordPress do_action function in init.
+* Tweak: Radio options when adding listings converted to checkboxes to slim down the admin pages.
+* Fix: Ducted Heating additional features now displays in feature list.
+* Fix: Fully fenced option now displays in feature list.
+* Tweak: Optimise Admin Listing queries.
+* Tweak: Removed double display of Under Offer in admin listing list.
+* Tweak: Leased rental listings now display the weekly rent amount in admin.
+* Tweak: Commercial Lease listing details improved in admin list.
+* Tweak: Sold price displays in admin.
+* Fix: Date Available fix for year.
+* New: epl_get_property_available filter allows customising date format.
+* Tweak: External links function improved.
+* Tweak: Added additional plugin file security access to prevent file reading outside of WordPress.
+* Fix: Number Formatting function PHP warning fixed.
+* Fix: is_epl_post function to prevent error when no posts are activated.
+* Tweak: Commercial auction listing support.
+* New: Contacts and form system for managing listing leads and history of contact.
+* New: contact_capture shortcode // Needs Author id of page and URL.
+* New: Contact System for Lead Generation and Capture.
+* New: Form API supports editor.
+* New: Dashboard Widget Listing and Contact Activity Feed.
+* New: Date Picker updated JS for improved usage and improved compatibility with themes and plugins.
+* Tweak: Code Docblocks created for http://docs.easypropertylistings.com.au code reference.
+* New: Link a contact with a listing and display details and quick access to contact.
+* New: Error tracking and debug logging helper functions.
+* New: Form API supports sections breaks.
+* New: Contextual help tab added to Add/Edit Listing page.
+* New: Inspection date format now customisable from settings.
+* Tweak: Extension license updater updated.
+* Tweak: Added additional map CSS classes to improve Google Map output with some themes.
+* New: Adjustable Map pin when editing a listing and setting coordinates. Drag the map pin to adujst the position.
+* Tweak: Imported values of 0 no longer display on commercial listings.
+* Tweak: epl_render_html_fields allows for css class set in the field array of meta-boxes.
+* Tweak: Commercial authority default type is now For Sale instead of Auction.
+* Tweak: Converted Radio options to tick boxes to reduce space.
+* Tweak: Commercial auction listing support.
+* Tweak: Bedrooms allow studio option.
+* Tweak: Applied thousands separator to land sizes using settings.
+* Tweak: Allow for .00 and .0 when adding listing prices.
+* Tweak: Toilet supports decimal.
+* Tweak: Additional Features increased to three columns to minimise space with single checkboxes.
+* Tweak: Listing price, sale, and rental price now supports decimal values when saving.
+* Tweak: Bond supports decimal figures.
+* Tweak: Translation strings fixed.
+* Tweak: m2 html character added.
+* Tweak: Listings with prices set to 0 like bond no longer display in admin.
+* Fix: Rental listing when using price text the rental period no longer displays in admin.
+* Tweak: Pagination loading globally for use in admin.
+* New: Pagination enhanced to enable adjustment of output.
+* Fix: Old function in metaboxes removed as it inadvertently caused additional unnecessary queries.
+* New: Generate visual reports on your listing KPI status so you can track your listings and sales.
+* Tweak: [listing_search] shortcode using new API and allows for custom templates. Place the template in themes/your_theme/easypropertylistings/templates/ folder.
+* Tweak: Enhanced Search Object thanks to codewp allows widget template override.
+* New: Search Widget and [listing_search] shortcode allows for property status option.
+* New: Search template now editable using epl_get_template_part.
+* New: Search widget and [listing_search] shortcode order option added to allow adjusting of field order.
+* New: Second agent field allows for searching users.
+* New: Search upgraded to object thanks to codewp.
+* New: Search for second listing author on listings.
+* New: Search widget and [listing_search] shortcode status search option added.
+* New: Search widget and [listing_search] shortcode support any registered post types.
+* New: Search widget and [listing_search] shortcode support single drop down selection for price, land, building.
+* Fix: Session start less likely to cause issues with certain server configurations.
+* Fix: listing_open shortcode no longer displays sold or leased listings.
+* New: Additional customisation of shortcode-listing.php template part.
+* Tweak: Listing Shortcode adjusted for better processing of options.
+* New: [listing_auction] shortcode.
+* New: Contact shortcode. [epl_contact_form]
+* New: Contact Form Widget.
+* New: Sort by location A-Z added to front end listing filter.
+* Tweak: iThemes Builder archive-listing.php and single-listing.php templates updated to improve render_content theme function.
+* New: Allow extensions to use core templates for output.
+* Fix: Added translation string for P.A. label.
+* Fix: Translation of land size unit.
+* Tweak: LinkedIn will use full URL or fallback.
+* New: Default embedded video width adjustable from settings.
+* New: Video links now support additional formats like Vimeo using the WordPress wp_oembed.
+* New: Listing widget now loadable using epl_get_template_part thanks to codewp.
+* Tweak: Widget descriptions added to widget management.
+* Fix: Stray ul tag with search widget tabbing.
+* Tweak: Improved get_additional_features_html function for additional features and added epl_get_additional_features_html filter
+* New: Contact tags taxonomy added for creating your own contact tags.
+* Tweak: Listing heading function enhanced for other post types.
+* Tweak: Building value now accepts decimal.
+* New: Support for Twenty Sixteen theme.
+* Tweak: Active theme function enhanced for older WordPress versions.
+* New: Templates added for Twenty Fourteen Theme to improve display.
+* New: Archive title action added for easier implementation and filters to adjust output.
+* New: epl_feedsync_format_strip_currency function to strip currency during import with epl_feedsync_format_strip_currency_symbol filter to modify string replacement search.
+* New: epl_archive_title_search_result Filter, default “Search Result”.
+* New: epl_archive_title_fallback Filter, default “Listing”.
+* New: epl_archive_title_default Filter.
+* New: epl_get_active_theme Filter.
+* New: epl_active_theme Filter.
+* New: epl_active_theme_name Filter.
+* New: epl_active_theme_prefix Filter.
+* New: epl_archive_title_fallback Filer.
+* Tweak: epl_strip_tags function added filter to adjust HTML tag stripping.
+* New: epl_contact_form_description_allowed_tags Filter.
+* New: epl_get_property_feature_taxonomy filter allowing adjustment of listing features.
+* New: epl_get_property_auction filter allows adjustment of auction date format.
+* New: epl_get_property_auction_label filter to adjust the Auction label.
+* New: epl_get_property_price_display Filter.
+* New: epl_get_property_price_sold_display Filter.
+* New: epl_get_property_price_sold_date Filter.
+* New: epl_get_property_rent Filter.
+* New: epl_get_property_bond Filter.
+* New: epl_get_property_land_category Filter.
+* New: epl_commercial_auction_label Filter.
+* New: epl_get_property_auction_date Filter.
+* New: epl_get_price_plain_value Filter.
+* New: epl_get_price Filter.
+* New: epl_get_price_sticker Filter.
+* New: epl_get_price_in_list Filter.
+* New: epl_get_property_commercial_category Filter.
+* New: epl_get_property_year_built_label Filter.
+* New: epl_get_property_year_built Filter.
+* New: epl_get_property_bath_label Filter.
+* New: epl_get_property_bathrooms_label Filter.
+* New: epl_get_property_bath Filter.
+* New: epl_get_property_bed_label Filter.
+* New: epl_get_property_bedrooms_label Filter.
+* New: epl_get_property_bed Filter.
+* New: epl_get_property_rooms_label Filter.
+* New: epl_get_property_rooms Filter.
+* New: epl_get_parking_spaces_label Filter.
+* New: epl_get_property_parking Filter.
+* New: epl_get_property_garage_label Filter.
+* New: epl_get_property_garage Filter.
+* New: epl_get_property_carport_label Filter.
+* New: epl_get_property_carport Filter.
+* New: epl_get_property_air_conditioning_label Filter.
+* New: epl_get_property_air_conditioning Filter.
+* New: epl_get_property_pool_label Filter.
+* New: epl_get_property_pool Filter.
+* New: epl_get_property_security_system_label Filter.
+* New: epl_get_property_security_system Filter.
+* New: epl_get_property_land_area_label Filter.
+* New: epl_get_property_land_value Filter.
+* New: epl_get_property_building_area_label Filter.
+* New: epl_get_property_building_area_value Filter.
+* New: epl_get_property_new_construction_label Filter.
+* New: epl_get_property_new_construction Filter.
+* New: epl_get_property_com_car_spaces_label Filter.
+* New: Dynamic additional features epl_get_{meta_key}_label Filter.
+* New: epl_get_additional_features_html Filter.
+* New: epl_get_additional_rural_features_html Filter.
+* New: epl_get_additional_commerical_features_html Filter.
+* New: epl_get_features_from_taxonomy Filter.
+* New: epl_checkbox_single_check_options Filter.
+* New: epl_property_sub_title_plus_outgoings_label Filter.
+* New: epl_property_sub_title_available_from_label Filter.
+* New: epl_property_sub_title_available_now_label Filer.
+* New: epl_get_formatted_property_address filter.
+* New: epl_get_property_category filter.
+* New: epl_get_property_tax.
+* New: epl_property_sub_title_property_features filter for Property Features label.
+* New: epl_property_sub_title_plus_outgoings filter for Plus Outgoings label.
+* New: epl_property_sub_title_commercial_features filter for Commercial Features label.
+* New: epl_property_sub_title_rural_features filter for Rural Features label.
+* New: epl_switch_views_sorting_title_sort filter for Sort label.
+* New: epl_switch_views_sorting_title_list filter for List label.
+* New: epl_switch_views_sorting_title_grid filter for Grid label.
+* New: epl_pagination_before_page_numbers filter.
+* New: epl_pagination_after_page_numbers filter.
+* New: epl_pagination_single_content_text Filter
+* New: epl_pagination_single_tag Filter.
+* New: epl_pagination_single Filter.
+* New: epl_pagination_single_dot_tag Filter.
+* New: epl_pagination_single_dot_content Filter.
+* New: epl_pagination_single_dot_attributes Filter.
+* New: epl_pagination_single_dot Filter.
 
 = 2.3.1 October 5, 2015 =
 

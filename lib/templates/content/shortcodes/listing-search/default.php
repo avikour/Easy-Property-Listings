@@ -69,7 +69,6 @@ if ( ! empty( $selected_post_types ) ) :
 			$is_sb_current = $tabcounter == 1 ? 'epl-sb-current' : '';
 		}
 		?>
-		</ul>
 		<div class="epl-search-form <?php echo $is_sb_current; ?>" id="epl_ps_tab_<?php echo $tabcounter; ?>">
 		<?php
 			if ( isset( $show_title ) && $show_title == 'true' ) {
@@ -85,7 +84,7 @@ if ( ! empty( $selected_post_types ) ) :
 				foreach ( $epl_frontend_fields as &$epl_frontend_field ) {
 
 					if($epl_frontend_field['key'] == 'property_status' && $show_property_status_frontend == 'on'){
-						$epl_frontend_field['type'] =  'text';
+						$epl_frontend_field['type'] =  'select';
 						$epl_frontend_field['config'] = 'on';
 					}
 

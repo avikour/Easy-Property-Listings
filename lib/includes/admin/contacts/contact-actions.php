@@ -139,10 +139,11 @@ function epl_contact_delete( $args ) {
 		$listings_array = $contact->listing_ids;
 
 		// delete contact from meta of interested listings
-		foreach($listings_array as $listing_id) {
-			$contact->remove_listing($listing_id);
+		if( !empty($listings_array) ) {
+			foreach($listings_array as $listing_id) {
+				$contact->remove_listing($listing_id);
+			}
 		}
-
 
 		$success        = $contact->delete( $contact->id );
 
@@ -1236,11 +1237,16 @@ add_action('epl_contact_add_listing_form','epl_contact_add_listing_form');
  * @since 3.0
  */
 function epl_before_meta_field_property_owner($post,$value) {
-	if(intval($value) == 0)
+
+	if(intval($value) == 0 )
 		return;
 
 	$url = admin_url('admin.php?page=epl-contacts&view=overview&id='.$value);
 	$contact = new EPL_Contact($value);
+
+	if( !$contact )
+		return;
+
 	echo '<tr class="form-field"><td>';
 	echo '
 			<div class="epl-listing-owner-details">
@@ -1339,7 +1345,7 @@ function epl_search_user() {
 		ob_start();
 		echo '<ul class="epl-contact-user-suggestion">';
 		foreach( $users as  $user) {
-			echo '<li data-id="'.$user->ID.'">'.$user->data->display_name.'</li>';
+			echo '<li data-uname="'.$user->data->user_login.'" data-id="'.$user->ID.'">'.$user->data->display_name.'</li>';
 		}
 		echo '</ul>';
 		echo ob_get_clean();
