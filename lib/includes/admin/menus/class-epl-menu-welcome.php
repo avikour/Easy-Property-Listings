@@ -168,6 +168,31 @@ class EPL_Welcome {
 
 			<div class="changelog headline-feature">
 
+				<h2><?php _e( 'New Grid Styles' , 'easy-property-listings'  );?></h2>
+
+				<div class="featured-image">
+					<img src="<?php echo EPL_PLUGIN_URL . 'lib/assets/images/screenshots/epl-new-grid.png'; ?>" class="epl-welcome-featured-image"/>
+				</div>
+
+				<div class="feature-section">
+					<p><?php _e( 'When the grid/list option was added in a previous version last year we did so without adding an internal container so that the grid could neatly format at 33.3% to maintain an even effect.' , 'easy-property-listings'  ); ?></p>
+
+					<p><?php _e( 'We have now implemented an internal container on the listing element and moved the styling options to this new CSS class. So when you decide to use the new styles you’ll have to update your styling to this new class called epl-property-blog-entry-wrapper.' , 'easy-property-listings'  ); ?></p>
+				</div>
+			</div>
+
+			<div class="changelog headline-feature">
+
+				<h2><?php _e( 'Load Custom CSS from Your Theme' , 'easy-property-listings'  );?></h2>
+
+				<div class="feature-section">
+					<p><?php _e( 'In 3.1 we have also added the ability to load custom stylesheets from your_theme/easypropertylistings/style.css which allows you to quickly style your listings and keep the stylesheets separate from your main theme stylesheets. This allows you to quickly take your custom created templates and use them on other real estate sites.' , 'easy-property-listings'  ); ?></p>
+
+				</div>
+			</div>
+
+			<div class="changelog headline-feature">
+
 				<h2><?php _e( 'Contact and Lead Management System' , 'easy-property-listings'  );?></h2>
 
 				<div class="featured-image">
@@ -223,6 +248,51 @@ class EPL_Welcome {
 			<h2 id="guide-changelog"><?php _e( 'Full Change Log','easy-property-listings'  );?></h2>
 
 				<div class="feature-section">
+
+					<h4><?php _e( 'Version 3.1.5', 'easy-property-listings'  );?></h4>
+
+					<ul>
+						<li><?php _e( 'New: Added a Google Maps API key notification to Easy Property Listings > Settings when no key is set.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Internal shortcode option documentation.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Shortcode offset breaking pagination. Note when using offset, pagination is disabled: [listing] , [listing_category], [listing_feature], [listing_location]', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Corrected the default option when using select fields.', 'easy-property-listings'  );?></li>
+					</ul>
+
+					<h4><?php _e( 'Version 3.1.4', 'easy-property-listings'  );?></h4>
+
+					<ul>
+						<li><?php _e( 'New: Added offset option to the following shortcodes that allows you to place multiple shortcodes on a single page and prevent displaying duplicate listings. Added to the following shortcodes: [listing] , [listing_category], [listing_feature], [listing_location]', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Optimisations to secondary author display by removing duplicate code.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Improvements to extension license updater and notifications on license status.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Performance improvements to admin functions.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Translations adjustment to load textdomain after all plugins initialised.', 'easy-property-listings'  );?></li>
+					</ul>
+
+					<h4><?php _e( 'Version 3.1.3', 'easy-property-listings'  );?></h4>
+
+					<ul>
+						<li><?php _e( 'Fix: Contact linking when editing listings with invalid contact ID.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Shortcode sorting for Current/Sold.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Commercial Lease price display.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Output Ensuite to features list.', 'easy-property-listings'  );?></li>
+					</ul>
+
+
+					<h4><?php _e( 'Version 3.1.2', 'easy-property-listings'  );?></h4>
+
+					<ul>
+						<li><?php _e( 'Fix: Corrected the address display of the Commercial and Business listing types.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Extension updater class to provide automatic updates.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Tweak: Visiting the plugins page now caches plugin updates.', 'easy-property-listings'  );?></li>
+					</ul>
+
+
+					<h4><?php _e( 'Version 3.1.1', 'easy-property-listings'  );?></h4>
+
+					<ul>
+						<li><?php _e( 'Fix: [listing] shortcode with author option correctly filters by username.', 'easy-property-listings'  );?></li>
+						<li><?php _e( 'Fix: Listing search undefined result when using custom search options.', 'easy-property-listings'  );?></li>
+					</ul>
 
 
 					<h4><?php _e( 'Version 3.1', 'easy-property-listings'  );?></h4>

@@ -779,7 +779,7 @@ function epl_render_html_fields ( $field = array() , $val = '' ) {
 
 			echo '<select name="'.$field['name'].'" id="'.$field['name'].'" '.$field_atts.' class="dependency-'.$dependency.'">';
 				if(!empty($field['default'])) {
-					echo '<option value="" selected="selected">'.__($field['default'], 'easy-property-listings' ).'</option>';
+					//echo '<option value="" selected="selected">'.__($field['default'], 'easy-property-listings' ).'</option>';
 				}
 
 				if(isset($field['opts']) && !empty($field['opts'])) {
@@ -2075,6 +2075,6 @@ function epl_parse_atts($atts) {
 		}
 
 	}
-	return $query['meta_query'];
+	return isset($query['meta_query'])?$query['meta_query'] : false;
 
 }

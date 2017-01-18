@@ -5,9 +5,9 @@ Contributors: mervb1
 Donate link: https://easypropertylistings.com.au/support-the-site/
 Tags: real estate, property, listings, CRM, contact management, reports, rental, commercial, business, rural, land, residential, property listings, property management, realtor, broker, contact, crm, australia, wp-property, wp property, wp rentals, wp-realestate, wp real estate, multisite, property, Merv Barrett, real estate connected
 Requires at least: 3.9
-Tested up to: 4.7
+Tested up to: 4.7.1
 
-Stable Tag: 3.0.4
+Stable Tag: 3.1.4
 
 License: GNU Version 2 or Any Later Version
 
@@ -392,7 +392,40 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 
 == Changelog ==
 
-= 3.1 November 24, 2016 =
+= 3.1.5 January 18, 2017 =
+
+* New: Added a Google Maps API key notification to Easy Property Listings > Settings when no key is set.
+* Tweak: Internal shortcode option documentation.
+* Fix: Shortcode offset feature breaking pagination. Note when using offset, pagination is disabled: [listing] , [listing_category], [listing_feature], [listing_location]
+* Fix: Corrected the default option when using select fields.
+
+= 3.1.4 January 16, 2017 =
+
+* New: Added offset option to the following shortcodes that allows you to place multiple shortcodes on a single page and prevent displaying duplicate listings. Added to the following shortcodes: [listing] , [listing_category], [listing_feature], [listing_location]
+* Tweak: Optimisations to secondary author display by removing duplicate code.
+* Tweak: Improvements to extension license updater and notifications on license status.
+* Tweak: Performance improvements to admin functions.
+* Tweak: Translations adjustment to load textdomain after all plugins initialised.
+
+= 3.1.3 January 3, 2017 =
+
+* Fix: Contact linking when editing listings with invalid contact ID.
+* Fix: Shortcode sorting for Current/Sold.
+* Fix: Commercial Lease price display.
+* Tweak: Output Ensuite to features list.
+
+= 3.1.2 December 13, 2016 =
+
+* Fix: Corrected the address display of the Commercial and Business listing types.
+* Fix: Extension updater class to provide automatic updates.
+* Tweak: Visiting the plugins page now caches plugin updates.
+
+= 3.1.1 December 6, 2016 =
+
+* Fix: [listing] shortcode with author option correctly filters by username.
+* Fix: Listing search undefined result when using custom search options.
+
+= 3.1 November 28, 2016 =
 
 * New: Rebuilt templates including additional wrapper for better grid layout.
 * New: Added legacy CSS option to prevent using new stylesheets when updating to 3.1 ensuring your listing display remains consistent.

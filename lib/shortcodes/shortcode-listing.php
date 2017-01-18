@@ -30,19 +30,20 @@ function epl_shortcode_listing_callback( $atts ) {
 	}
 
 	$attributes = shortcode_atts( array(
-		'post_type'    => $property_types, //Post Type
-		'status'       => array( 'current', 'sold', 'leased' ),
-		'limit'        => '10', // Number of maximum posts to show
-		'author'       => '',	// Author of listings.
-		'featured'	   => 0,	// Featured listings.
-		'template'     => false, // Template can be set to "slim" for home open style template
-		'location'     => '', // Location slug. Should be a name like sorrento
-		'tools_top'    => 'off', // Tools before the loop like Sorter and Grid on or off
-		'tools_bottom' => 'off', // Tools after the loop like pagination on or off
-		'sortby'       => '', // Options: price, date : Default date
-		'sort_order'   => 'DESC',
-		'query_object' => '', // only for internal use . if provided use it instead of custom query
-		'pagination'   => 'on'			
+		'post_type'	=> $property_types, //Post Type
+		'status'	=> array( 'current', 'sold', 'leased' ),
+		'limit'		=> '10', // Number of maximum posts to show
+		'offset'	=> '', // Offset posts. When used, pagination is disabled
+		'author'	=> '',	// Author of listings.
+		'featured'	=> 0,	// Featured listings.
+		'template'	=> false, // Template can be set to "slim" for home open style template
+		'location'	=> '', // Location slug. Should be a name like sorrento
+		'tools_top'	=> 'off', // Tools before the loop like Sorter and Grid on or off
+		'tools_bottom'	=> 'off', // Tools after the loop like pagination on or off
+		'sortby'	=> '', // Options: price, date : Default date
+		'sort_order'	=> 'DESC', // Sort by ASC or DESC
+		'query_object'	=> '', // only for internal use . if provided use it instead of custom query
+		'pagination'	=> 'on' // Enable or disable pagination
 	), $atts );
 
 	if ( is_string( $attributes['post_type'] ) && $attributes['post_type'] == 'rental' ) {
@@ -58,21 +59,32 @@ function epl_shortcode_listing_callback( $atts ) {
 	if ( ! is_array( $attributes['post_type'] ) ) {
 		$attributes['post_type'] = array_map( 'trim', explode( ',',$attributes['post_type'] ) );
 	}
+
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$args = array(
 		'post_type'      =>	$attributes['post_type'],
 		'posts_per_page' =>	$attributes['limit'],
 		'paged'          =>	absint( $paged ),
 	);
+
+	// Offset query does not work with pagination
+	if ( ! empty ( $attributes['offset'] ) ) {
+		$args['offset'] 		= $attributes['offset'];
+		$attributes['pagination'] 	= 'off'; // Disable pagination when offset is used
+	}
+
 	$args['meta_query'] = epl_parse_atts($atts);
 
 	// Listings of specified author.
 	if ( ! empty( $attributes['author'] ) ) {
+		$attributes['author'] = (array) $attributes['author'];
 		if ( is_array( $attributes['author'] ) ) {
-			$attributes['author'] = implode( ',', array_map( 'absint', $attributes['author'] ) );
+			$author_ids = array_map( 'epl_get_author_id_from_name', $attributes['author'] );
+			$attributes['author'] = implode( ',', $author_ids );
 		}
 		$args['author'] = trim( $attributes['author'] );
 	}
+
 	// Featured listings.
 	if ( $attributes['featured'] ) {
 		$args['meta_query'][] = array(
@@ -150,4 +162,18 @@ function epl_sorting_options_callback( $sorters ) {
 		}
 	}
 	return $sorters;
+}
+
+/**
+ * Get author id from name
+ *
+ * @since       3.1.1
+ */
+function epl_get_author_id_from_name($author) {
+	if( is_numeric($author) ) {
+		return absint($author);
+	} else {
+		$user = get_user_by( 'login', $author );
+		return $user->ID;
+	}
 }

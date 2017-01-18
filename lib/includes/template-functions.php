@@ -18,12 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 2.2
  */
 function epl_reset_property_object( $post ) {
-	global $epl_author;
+	global $epl_author,$epl_author_secondary;
 	$epl_author 	= new EPL_Author_meta($post->post_author);
 
 	if( is_epl_post() ){
 		global $property;
 		$property 		= new EPL_Property_Meta($post);
+		if( $ID = epl_listing_has_secondary_author() ) {
+		    $epl_author_secondary = new EPL_Author_meta($ID);
+		}
 	}
 }
 add_action( 'the_post', 'epl_reset_property_object' );
@@ -35,7 +38,7 @@ add_action( 'the_post', 'epl_reset_property_object' );
  */
 function epl_create_property_object() {
 
-	global $post,$property,$epl_author;
+	global $post,$property,$epl_author,$epl_author_secondary;
 
 	if(is_author()) {
 		$author_id 		=  get_query_var( 'author' );
@@ -48,6 +51,10 @@ function epl_create_property_object() {
 
 	if( is_epl_post() ){
 		$property 	= new EPL_Property_Meta($post);
+		if( $ID = epl_listing_has_secondary_author() ) {
+		    $epl_author_secondary = new EPL_Author_meta($ID);
+		}
+
 	}
 }
 
@@ -280,24 +287,29 @@ function epl_property_blog($template='') {
 add_action('epl_property_blog','epl_property_blog');
 
 /**
+ * Renders default author box
+ * @since 3.2
+ */
+function epl_property_author_default() {
+	global $epl_author_secondary;
+	epl_get_template_part('content-author-box.php');
+	if( epl_listing_has_secondary_author() ) {
+	    epl_get_template_part('content-author-box.php',array('epl_author'	=>	$epl_author_secondary));
+	    epl_reset_post_author();
+	}
+}
+/**
  * AUTHOR CARD : Tabbed Style
  *
  * @since 1.0
  */
 function epl_property_author_box() {
-	global $property,$epl_author,$epl_author_secondary;
-	epl_get_template_part('content-author-box.php');
-    if($property != NULL) {
-        $property_second_agent = $property->get_property_meta('property_second_agent');
-            if ( '' != $property_second_agent ) {
-                $second_author = get_user_by( 'login' , $property_second_agent );
-                if($second_author !== false){
-                        $epl_author_secondary = new EPL_Author_meta($second_author->ID);
-                        epl_get_template_part('content-author-box.php',array('epl_author'	=>	$epl_author_secondary));
-                }
-                epl_reset_post_author();
-            }
-    }
+
+	if ( has_action( 'epl_author_template' ) ) {
+		do_action( 'epl_author_template' );
+	} else {
+		epl_property_author_default();
+	}
 }
 
 /**
@@ -321,17 +333,10 @@ add_action( 'epl_single_author' , 'epl_property_author_box' , 10 );
 function epl_property_author_box_simple_card() {
 	global $property,$epl_author,$epl_author_secondary;
 	epl_get_template_part('content-author-box-simple-card.php');
-	if($property != NULL) {
-		$property_second_agent = $property->get_property_meta('property_second_agent');
-		if ( '' != $property_second_agent ) {
-			$second_author = get_user_by( 'login' , $property_second_agent );
-			if($second_author !== false){
-			        $epl_author_secondary = new EPL_Author_meta($second_author->ID);
-			        epl_get_template_part('content-author-box-simple-card.php',array('epl_author'	=>	$epl_author_secondary));
-			}
-		epl_reset_post_author();
-		}
+	if( epl_listing_has_secondary_author() ) {
+		    epl_get_template_part('content-author-box-simple-card.php',array('epl_author'	=>	$epl_author_secondary));
 	}
+	epl_reset_post_author();
 }
 
 /**
@@ -342,17 +347,10 @@ function epl_property_author_box_simple_card() {
 function epl_property_author_box_simple_grav() {
 	global $property,$epl_author,$epl_author_secondary;
 	epl_get_template_part('content-author-box-simple-grav.php');
-	if($property != NULL) {
-		$property_second_agent = $property->get_property_meta('property_second_agent');
-		if ( '' != $property_second_agent ) {
-			$second_author = get_user_by( 'login' , $property_second_agent );
-			if($second_author !== false){
-				$epl_author_secondary = new EPL_Author_meta($second_author->ID);
-				epl_get_template_part('content-author-box-simple-grav.php',array('epl_author'	=>	$epl_author_secondary));
-			}
-		epl_reset_post_author();
-		}
+	if( epl_listing_has_secondary_author() ) {
+		    epl_get_template_part('content-author-box-simple-grav.php',array('epl_author'	=>	$epl_author_secondary));
 	}
+	epl_reset_post_author();
 }
 
 /**
@@ -392,7 +390,12 @@ function epl_property_widget( $display , $image , $title , $icons , $more_text =
 		// Do Not Display Withdrawn or OffMarket listings
 	} else {
 		$arg_list = get_defined_vars();
-		epl_get_template_part($tpl,$arg_list);
+		if ( has_action( 'epl_listing_widget_template' ) ) {
+			do_action( 'epl_listing_widget_template',$tpl,$arg_list );
+		} else {
+			epl_get_template_part($tpl,$arg_list);
+		}
+		
 	} // End Status Removal
 }
 
@@ -433,7 +436,7 @@ function epl_property_widget_image_only_option( $image ) {
  * @since 1.0
  */
 function epl_property_author_box_simple_card_tall( $d_image , $d_icons , $d_bio) {
-	global $property,$epl_author;
+	global $property,$epl_author,$epl_author_secondary;
 	if( is_null($epl_author) )
 		return;
 
@@ -442,16 +445,11 @@ function epl_property_author_box_simple_card_tall( $d_image , $d_icons , $d_bio)
 
 	// Second Author
 	if ( is_single() && !is_null($property) ) {
-		$property_second_agent = $property->get_property_meta('property_second_agent');
-		if ( '' != $property_second_agent ) {
-			$second_author = get_user_by( 'login' , $property_second_agent );
-			if($second_author !== false){
-					$epl_author = new EPL_Author_meta($second_author->ID);
-					$arg_list = get_defined_vars();
-					epl_get_template_part('widget-content-author-tall.php',$arg_list);
-			}
-			epl_reset_post_author();
+		if( epl_listing_has_secondary_author() ) {
+				$epl_author = $epl_author_secondary;
+			    epl_get_template_part('widget-content-author-tall.php',$arg_list);
 		}
+		epl_reset_post_author();
 	}
 }
 
@@ -795,6 +793,7 @@ function epl_property_tab_section() {
 	$the_property_feature_list .= $property->get_property_building_area_value('l').' '.$property->get_property_new_construction('l');
 	$common_features = array(
 				'property_toilet',
+				'property_ensuite',
 				'property_pet_friendly',
 				'property_garage',
 				'property_carport',
@@ -965,18 +964,22 @@ function epl_get_property_price () {
 function epl_widget_listing_address ( $d_suburb = '' , $d_street = '' ) {
 	global $property;
 	if ($property->post_type == 'commercial' || $property->post_type == 'business' ){
-		if ( $property->get_property_meta('property_address_display') == 'no' && $property->get_property_meta('property_com_display_suburb') == 'no') { ?>
-			<div class="property-meta suburb-name">
-				<span class="item-state"><?php echo $property->get_property_meta('property_address_state') . ' '; ?></span>
-				<span class="item-pcode"><?php echo $property->get_property_meta('property_address_postal_code'); ?></span>
-			</div>
-		<?php } elseif ( $property->get_property_meta('property_address_display') == 'no' && $property->get_property_meta('property_com_display_suburb') == 'yes') { ?>
+		// Address Display not Commercial or Business type
+		if ( $property->get_property_meta('property_address_display') == 'yes' ) { ?>
+			<?php // Suburb
+			if ( $d_suburb == 'on' && $property->get_property_meta('property_com_display_suburb') == 'yes' ) { ?>
 				<div class="property-meta suburb-name"><?php echo $property->get_property_meta('property_address_suburb'); ?></div>
-		<?php } elseif ( $property->get_property_meta('property_address_display') == 'yes' && $property->get_property_meta('property_com_display_suburb') == 'no') { ?>
-			<div class="property-meta suburb-name">
-				<span class="item-state"><?php echo $property->get_property_meta('property_address_state') . ' '; ?></span>
-				<span class="item-pcode"><?php echo $property->get_property_meta('property_address_postal_code'); ?></span>
-			</div>
+			<?php } ?>
+
+			<?php // Street
+			if ( $d_street == 'on' ) { ?>
+				<div class="property-meta street-name"><?php echo $property->get_formatted_property_address(); ?></div>
+			<?php } ?>
+		<?php } else { ?>
+			<?php // Suburb
+			if ( $d_suburb == 'on' && $property->get_property_meta('property_com_display_suburb') == 'yes' ) { ?>
+				<div class="property-meta suburb-name"><?php echo $property->get_property_meta('property_address_suburb'); ?></div>
+			<?php } ?>
 		<?php }
 	} else {
 		// Address Display not Commercial or Business type
@@ -2087,25 +2090,34 @@ function epl_archive_title_callback() {
 }
 add_action( 'epl_the_archive_title' , 'epl_archive_title_callback' );
 
+/**
+ * Shortcode Sorter
+ *
+ * @since 3.0
+ * @return $args
+ */
 function epl_add_orderby_args($args) {
 
-	if ( isset( $_GET['sortby'] ) ) {
-		$id = sanitize_text_field( trim( $_GET['sortby'] ) );
-		$sorting_options = epl_sorting_options();
+	if(isset($_GET['sortby']) && trim($_GET['sortby']) != ''){
 
-		foreach($sorting_options as $sorting_option) {
+		$orderby = sanitize_text_field(trim($_GET['sortby']));
+		$sorters = epl_sorting_options();
 
-			if($id == $sorting_option['id']) {
+		foreach($sorters as $sorter) {
 
-				if( isset($sorting_option['orderby']) )
-					$args['orderby']  = $sorting_option['orderby'];
+			if($orderby == $sorter['id']){
 
-				$args['meta_key'] =	$sorting_option['key'];
-				$args['order']    = $sorting_option['order'];
+				if($sorter['type'] == 'meta') {
+					$args['orderby']  = $sorter['orderby'];
+					$args['meta_key'] =	$sorter['key'];
+				} else {
+					$args['orderby']  = $sorter['key'];
+				}
+				$args['order']    = $sorter['order'];
 				break;
 			}
-		}
 
+		}
 	}
 	return $args;
 }
