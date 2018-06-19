@@ -79,7 +79,7 @@ if ( is_admin() ) {
 		$columns = array(
 			'cb' 			=> '<input type="checkbox" />',
 			'property_thumb'	=> __('Image', 'easy-property-listings' ),
-			'property_price'	=> __('Rent', 'easy-property-listings' ),
+			'property_rent'		=> __('Rent', 'easy-property-listings' ),
 			'title'			=> __('Address', 'easy-property-listings' ),
 			'listing'		=> __('Listing Details', 'easy-property-listings' ),
 			'listing_id'		=> __('Unique ID' , 'easy-property-listings' ),
@@ -87,7 +87,11 @@ if ( is_admin() ) {
 			'property_status'	=> __('Status', 'easy-property-listings' ),
 			'agent'			=> __('Agent', 'easy-property-listings' ),
 			'date'			=> __('Date', 'easy-property-listings' )
-		);
+		)  + $columns;
+
+		// unset author columns as duplicate of agent column
+		unset( $columns['author'] );
+		unset( $columns['comments'] );
 
 		// Geocode Column
 		$geo_debug = !empty($epl_settings) && isset($epl_settings['debug']) ? $epl_settings['debug'] : 0;
@@ -101,7 +105,7 @@ if ( is_admin() ) {
 			unset($columns['listing_id']);
 		}
 
-		return $columns;
+		return apply_filters('epl_post_type_rental_admin_columns',$columns);
 	}
 	add_filter( 'manage_edit-rental_columns', 'epl_manage_rental_columns_heading' ) ;
 
@@ -145,8 +149,8 @@ if ( is_admin() ) {
 
 				break;
 
-			/* If displaying the 'property_price' column. */
-			case 'property_price' :
+			/* If displaying the 'property_rent' column. */
+			case 'property_rent' :
 				do_action('epl_manage_listing_column_price_before');
 				do_action('epl_manage_listing_column_price');
 				do_action('epl_manage_listing_column_price_after');
@@ -161,7 +165,6 @@ if ( is_admin() ) {
 				break;
 
 			case 'agent':
-
 				do_action('epl_manage_listing_column_agent_before');
 				do_action('epl_manage_listing_column_agent');
 				do_action('epl_manage_listing_column_agent_after');

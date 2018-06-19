@@ -34,7 +34,7 @@ function epl_shortcode_listing_category_callback( $atts ) {
 		'commercial_listing_type'	=>	'', // Listing Type, 'sale' , 'lease', 'both'
 		'category_key'			=>	'', // Meta field key
 		'category_value'		=>	'', // Meta field value
-		'category_compare'		=>	'IN', // Compare using 'IN','NOT IN','BETWEEN','NOT BETWEEN'
+		'category_compare'		=>	'IN', // Compare using '=', '!=', '>', '>=', '<', '<=', 'LIKE', 'NOT LIKE', 'EXISTS', 'NOT EXISTS', 'IN','NOT IN','BETWEEN','NOT BETWEEN'
 		'limit'				=>	'10', // Number of maximum posts to show
 		'offset'			=>	'', // Offset posts. When used, pagination is disabled
 		'template'			=>	false, // Template can be set to "slim" for home open style template
@@ -152,7 +152,7 @@ function epl_shortcode_listing_category_callback( $atts ) {
 	$query_open = new WP_Query( $args );
 	if ( $query_open->have_posts() ) { ?>
 		<div class="loop epl-shortcode">
-			<div class="loop-content epl-shortcode-listing-category <?php echo epl_template_class( $template ); ?>">
+			<div class="loop-content epl-shortcode-listing-category <?php echo epl_template_class( $template, 'archive' ); ?>">
 				<?php
 					if ( $tools_top == 'on' ) {
 						do_action( 'epl_property_loop_start' );
@@ -177,7 +177,7 @@ function epl_shortcode_listing_category_callback( $atts ) {
 		</div>
 		<?php
 	} else {
-		echo '<h3>'.__('Nothing found, please check back later.', 'easy-property-listings' ).'</h3>';
+		do_action( 'epl_shortcode_results_message' );
 	}
 	wp_reset_postdata();
 	return ob_get_clean();

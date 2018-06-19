@@ -19,6 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @return void
  */
 function epl_register_taxonomy_features() {
+
+	$slug = defined( 'EPL_FEATURES_SLUG' ) ? EPL_FEATURES_SLUG : 'feature';
+	$hierarchical = defined( 'EPL_FEATURES_HIERARCHICAL' ) && EPL_FEATURES_HIERARCHICAL ? true : false;
+	$rewrite  = defined( 'EPL_FEATURES_DISABLE_REWRITE' ) && EPL_FEATURES_REWRITE ? false : array( 'slug' => $slug, 'with_front' => true, 'hierarchical' => $hierarchical );
+
 	$labels = array(
 		'name'                       => _x( 'Features', 'Taxonomy General Name', 'easy-property-listings'  ),
 		'singular_name'              => _x( 'Feature', 'Taxonomy Singular Name', 'easy-property-listings'  ),
@@ -36,14 +41,10 @@ function epl_register_taxonomy_features() {
 		'choose_from_most_used'      => __( 'Choose from the most used Feature', 'easy-property-listings'  ),
 		'not_found'                  => __( 'Feature Not Found', 'easy-property-listings'  ),
 	);
-	$rewrite = array(
-		'slug'                       => 'feature',
-		'with_front'                 => true,
-		'hierarchical'               => false,
-	);
+
 	$args = array(
 		'labels'                     => $labels,
-		'hierarchical'               => false,
+		'hierarchical'               => $hierarchical,
 		'public'                     => true,
 		'show_ui'                    => true,
 		'show_admin_column'          => true,

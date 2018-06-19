@@ -21,17 +21,18 @@ class EPL_Widget_Author extends WP_Widget {
 
 	function __construct() {
 		parent::__construct( false, $name = __('EPL - Author', 'easy-property-listings'), array( 'description' => __( 'Add an Author profile to a sidebar.', 'easy-property-listings' ) ) );
+		// Widget name for filter: epl_author
 	}
 
 	function widget($args, $instance) {
 
 		$defaults = array(
-					'title'		=>	'',
-					'display'	=>	0,
-					'd_image'	=>	0,
-					'd_icons'	=>	0,
-					'd_bio'		=>	0
-				);
+			'title'		=>	'',
+			'display'	=>	0,
+			'd_image'	=>	0,
+			'd_icons'	=>	0,
+			'd_bio'		=>	0
+		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
@@ -42,12 +43,31 @@ class EPL_Widget_Author extends WP_Widget {
 		$d_icons	= $instance['d_icons'];
 		$d_bio		= $instance['d_bio'];
 
-		echo $before_widget;
-		if ( $title )
-			echo $before_title . $title . $after_title;
-		epl_property_author_box_simple_card_tall( $d_image , $d_icons , $d_bio);
+		if ( is_epl_post_single() ) {
+			// Only retrieve global $property variable if singluar
+			global $property;
+			$hide_author_box	=	$property->get_property_meta('property_agent_hide_author_box');
 
-		echo $after_widget;
+			if ( $hide_author_box == 'yes' ) {
+				// Hide Author Box
+			} else {
+				echo $before_widget;
+				if ( $title )
+					echo $before_title . $title . $after_title;
+					epl_property_author_box_simple_card_tall( $d_image , $d_icons , $d_bio);
+
+				echo $after_widget;
+			}
+
+		} else {
+
+			echo $before_widget;
+			if ( $title )
+				echo $before_title . $title . $after_title;
+				epl_property_author_box_simple_card_tall( $d_image , $d_icons , $d_bio);
+
+			echo $after_widget;
+		}
 	}
 
 	function update($new_instance, $old_instance) {
@@ -62,12 +82,12 @@ class EPL_Widget_Author extends WP_Widget {
 
 	function form($instance) {
 		$defaults = array(
-						'title'		=>	'',
-						'display'	=>	0,
-						'd_image'	=>	0,
-						'd_icons'	=>	0,
-						'd_bio'		=>	0
-					);
+			'title'		=>	'',
+			'display'	=>	0,
+			'd_image'	=>	0,
+			'd_icons'	=>	0,
+			'd_bio'		=>	0
+		);
 
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -100,4 +120,17 @@ class EPL_Widget_Author extends WP_Widget {
 		<?php
 	}
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("EPL_Widget_Author");') );
+
+/**
+ * Register Author Widget.
+ *
+ * Registers the EPL Widgets.
+ *
+ * @since 3.2.2
+ * @return void
+ */
+function epl_register_widget_author() {
+	register_widget( 'EPL_Widget_Author' );
+}
+add_action( 'widgets_init', 'epl_register_widget_author' );
+

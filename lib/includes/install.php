@@ -90,7 +90,10 @@ function epl_install() {
 		'epl_video_width'			=> 600,
 		'min_contact_access'			=> 'level_10',
 		'min_reports_access'			=> 'level_10',
-		'activate_post_types'			=> array('property')
+		'activate_post_types'			=> array('property'),
+		'epl_default_country'			=> 'Australia',
+		'epl_icons_svg_listings'		=> 'off',
+		'epl_icons_svg_author'			=> 'off',
 	);
 
 	if(!empty($epl_settings)) {
@@ -116,6 +119,12 @@ function epl_install() {
 	} else {
 		$epl_data = get_plugin_data(EPL_PLUGIN_PATH.'/easy-property-listings.php');
 		update_option( 'epl_version', $epl_data['Version'] );
+	}
+
+	$notice_display = get_transient( 'epl_admin_notices_display' );
+
+	if( !$notice_display ) {
+		set_transient( 'epl_admin_notices_display', true, 60*60*24*14 );
 	}
 
 	// Bail if activating from network, or bulk
@@ -216,6 +225,18 @@ function epl_plugin_updates() {
 	if ( version_compare( $current_version, '3.1', '<' ) ) {
 		include( EPL_PATH_UPDATES.'epl-3.1.php' );
 		update_option( 'epl_version' ,'3.1');
+	}
+	if ( version_compare( $current_version, '3.1.16', '<' ) ) {
+		include( EPL_PATH_UPDATES.'epl-3.1.16.php' );
+		update_option( 'epl_version' ,'3.1.16');
+	}
+	if ( version_compare( $current_version, '3.2', '<' ) ) {
+		include( EPL_PATH_UPDATES.'epl-3.2.php' );
+		update_option( 'epl_version' ,'3.2');
+	}
+	if ( version_compare( $current_version, '3.2.2', '<' ) ) {
+		 flush_rewrite_rules();
+		 update_option( 'epl_version' ,'3.2.2');
 	}
 }
 add_action( 'admin_init', 'epl_plugin_updates' );
