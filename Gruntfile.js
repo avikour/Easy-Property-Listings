@@ -11,17 +11,6 @@ module.exports = function( grunt ) {
 			js: 'lib/assets/js'
 		},
 
-		// JavaScript linting with JSHint.
-		/*jshint: {
-			options: {
-				jshintrc: '.jshintrc'
-			},
-			all: [
-				'Gruntfile.js',
-				'<%= dirs.js %>/*.js',
-				'!<%= dirs.js %>/*.min.js',
-			]
-		},*/
 
 		// Minify .js files.
 		uglify: {
@@ -29,28 +18,6 @@ module.exports = function( grunt ) {
 				// Preserve comments that start with a bang.
 				preserveComments: /^!/
 			},
-			/*admin: {
-				files: [{
-					expand: true,
-					cwd: '<%= dirs.js %>/',
-					src: [
-						'*.js',
-						'!*.min.js'
-					],
-					dest: '<%= dirs.js %>/',
-					ext: '.min.js'
-				}]
-			},*/
-			/*vendor: {
-				files: {
-					'<%= dirs.js %>/epl.min.js': ['<%= dirs.js %>/epl.js'],
-					'<%= dirs.js %>/jquery-admin-scripts.min.js': ['<%= dirs.js %>/jquery-admin-scripts.js'],
-					'<%= dirs.js %>/jquery-datetime-picker.min.js': ['<%= dirs.js %>/jquery-datetime-picker.js'],
-					'<%= dirs.js %>/jquery-front-scripts.min.js': ['<%= dirs.js %>/jquery-front-scripts.js'],
-					'<%= dirs.js %>/jquery-validationEngine-en.min.js': ['<%= dirs.js %>/jquery-validationEngine-en.js'],
-					'<%= dirs.js %>/jquery-validationEngine.min.js': ['<%= dirs.js %>/jquery-validationEngine.js'],
-				}
-			},*/
 
 			frontend: {
 				files: [{
@@ -58,7 +25,8 @@ module.exports = function( grunt ) {
 					cwd: '<%= dirs.js %>/',
 					src: [
 						'*.js',
-						'!*.min.js'
+						'!*.min.js',
+						'!*.float.js'
 					],
 					dest: '<%= dirs.js %>/',
 					ext: '.min.js'
@@ -87,34 +55,10 @@ module.exports = function( grunt ) {
 				files: [
 					'<%= dirs.js %>/*js',
 				],
-				//tasks: ['jshint', 'uglify']
 				tasks: ['uglify']
 			}
 		},
 
-		// Generate POT files.
-		makepot: {
-			options: {
-				type: 'wp-plugin',
-				domainPath: 'lib/languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'https://github.com/woothemes/woocommerce/issues',
-					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
-				}
-			},
-			dist: {
-				options: {
-					potFilename: 'easy-property-listings.pot',
-					exclude: [
-						'apigen/.*',
-						'tests/.*',
-						'tmp/.*'
-					]
-				}
-			}
-		},
-
-		// Check textdomain errors.
 		checktextdomain: {
 			options:{
 				text_domain: 'easy-property-listings',
@@ -129,83 +73,91 @@ module.exports = function( grunt ) {
 					'esc_attr_e:1,2d',
 					'esc_attr_x:1,2c,3d',
 					'_ex:1,2c,3d',
-					'_n:1,2,4d',
+					'_n:1,2,3,4d',
 					'_nx:1,2,4c,5d',
 					'_n_noop:1,2,3d',
-					'_nx_noop:1,2,3c,4d'
+					'_nx_noop:1,2,3c,4d',
+					' __ngettext:1,2,3d',
+					'__ngettext_noop:1,2,3d',
+					'_c:1,2d',
+					'_nc:1,2,4c,5d'
 				]
 			},
 			files: {
-				src:  [
+				src: [
 					'**/*.php', // Include all files
-					'!apigen/**', // Exclude apigen/
 					'!node_modules/**', // Exclude node_modules/
-					'!tests/**', // Exclude tests/
-					'!tmp/**' // Exclude tmp/
+					'!apigen/**', // Exclude apigen/
+					'!epl-apidocs/**'// Exclude apigen/
 				],
 				expand: true
 			}
 		},
 
-		// Exec shell commands.
-		shell: {
+		// Generate POT files.
+		makepot: {
 			options: {
-				stdout: true,
-				stderr: true
+				type: 'wp-plugin',
+				domainPath: 'languages',
+				potHeaders: {
+					'report-msgid-bugs-to' : 'http://wordpress.org/support/plugin/easy-property-listings',
+					'last-translator' : 'Merv Barrett <support@easypropertylistings.com.au>',
+					'language-team' : 'Real Estate Connected <support@realestateconnected.com.au>',
+					'Plural-Forms': 'nplurals=2; plural=(n > 1);',
+					'X-Poedit-SourceCharset' : 'UTF-8',
+					'X-Poedit-KeywordsList' : '__;_e;_x;_ex;_n;esc_html__;esc_html_e;esc_html_x;esc_attr__;esc_attr_e;esc_attr_x',
+					'X-Poedit-Basepath' : '..',
+					'X-Poedit-SearchPath-0' : '.',
+					'X-Poedit-SearchPathExcluded-0' : 'node_modules',
+					'X-Poedit-SearchPathExcluded-1' : 'epl-apidocs',
+					'X-Poedit-SearchPathExcluded-2' : 'apigen',
+					'X-Poedit-SearchPathExcluded-3' : 'Gruntfile.js',
+					'X-Poedit-SearchPathExcluded-4' : 'apigen.neon',
+					'X-Poedit-SearchPathExcluded-5' : 'package.json',
+					'X-Poedit-SearchPathExcluded-6' : 'README.md'
+				}
 			},
-			apigen: {
-				command: [
-					'apigen generate',
-					'cd apigen',
-					'php hook-docs.php'
-				].join( '&&' )
+			dist: {
+				options: {
+					potFilename: 'easy-property-listings.pot',
+					exclude: [
+						'node_modules/.*',
+						'epl-apidocs/.*',
+						'apigen/.*',
+						'tests/.*',
+						'tmp/.*'
+					]
+				}
 			}
 		},
 
-		// Clean the directory.
-		clean: {
-			apigen: {
-				src: [ 'epl-apidocs' ]
-			}
-		}
 	});
 
-	// Load NPM tasks to be used here
-	grunt.loadNpmTasks( 'grunt-shell' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
-	//grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-	//grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
 	// Register tasks
 	grunt.registerTask( 'default', [
-		//'jshint',
 		'uglify',
-		'css'
+		'css',
+		'checktextdomain',
+		'makepot'
 	]);
 
 	grunt.registerTask( 'js', [
-		//'jshint',
-		//'uglify:admin',
 		'uglify:frontend'
 	]);
 
 	grunt.registerTask( 'css', [
-		//'sass',
 		'cssmin'
-	]);
-
-	grunt.registerTask( 'docs', [
-		'clean:apigen',
-		'shell:apigen'
 	]);
 
 	grunt.registerTask( 'dev', [
 		'default',
 		'makepot'
 	]);
+
 };
