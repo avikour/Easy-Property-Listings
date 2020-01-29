@@ -510,20 +510,42 @@ class EPL_Property_Meta {
 	/**
 	 * Formatted Street level address based on selected display option
 	 *
-	 * @since 2.0
+	 * @param bool   $street_separator Output a address separator after the street address.
+	 * @param string $separator_symbol Symbol to use as the address separator, default is a comma.
+	 *
 	 * @return string formatted street address
+	 *
+	 * @since 2.0.0
+	 * @since 3.4.8 Corrected spacing if value is present. Implemented separator with existing filter.
 	 */
-	public function get_formatted_property_address() {
-		$street     = $this->get_property_meta( 'property_address_lot_number' ) . ' ';
-		$sub_number = $this->get_property_meta( 'property_address_sub_number' );
+	public function get_formatted_property_address( $street_separator = true, $separator_symbol = ',' ) {
 
-		if ( ! empty( $sub_number ) ) {
-			$street .= $this->get_property_meta( 'property_address_sub_number' ) . '/';
+		$street = '';
+
+		$lot_number = $this->get_property_meta( 'property_address_lot_number' );
+		if ( ! empty( $lot_number ) ) {
+			$street .= $lot_number . ' ';
 		}
 
-		$street .= $this->get_property_meta( 'property_address_street_number' ) . ' ';
-		$street .= $this->get_property_meta( 'property_address_street' ) . ' ';
+		$sub_number = $this->get_property_meta( 'property_address_sub_number' );
+		if ( ! empty( $sub_number ) ) {
+			$street .= $sub_number . '/';
+		}
 
+		$street_number = $this->get_property_meta( 'property_address_street_number' );
+		if ( ! empty( $street_number ) ) {
+			$street .= $street_number . ' ';
+		}
+
+		$street_name = $this->get_property_meta( 'property_address_street' );
+		if ( ! empty( $street_name ) ) {
+			$street .= $street_name;
+
+			if ( true === $street_separator ) {
+				$separator_symbol = apply_filters( 'epl_property_address_separator', $separator_symbol );
+				$street          .= $separator_symbol;
+			}
+		}
 		return apply_filters( 'epl_get_formatted_property_address', $street );
 	}
 
@@ -736,7 +758,7 @@ class EPL_Property_Meta {
 		$prop_price_view = $this->get_property_meta( 'property_price_view' );
 		$prop_com_rent   = $this->get_property_com_rent();
 		$price           = '';
-		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type ) {
+		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type || 'business' === $this->post_type ) {
 			if ( 'sold' === $this->get_property_meta( 'property_status' ) ) {
 				$price = '<span class="page-price sold-status">' . $this->label_sold . $this->get_property_price_sold_display() . '</span>';
 			} elseif ( ! empty( $price_display ) && 'yes' === $this->get_property_meta( 'property_price_display' ) ) {   // Property.
@@ -775,7 +797,7 @@ class EPL_Property_Meta {
 			} else {
 				$price = '<span class="page-price">' . __( 'TBA', 'easy-property-listings' ) . '</span>';
 			}
-		} elseif ( 'commercial' === $this->post_type || 'business' === $this->post_type || 'commercial_land' === $this->post_type ) {
+		} elseif ( 'commercial' === $this->post_type || 'commercial_land' === $this->post_type ) {
 			$prop_com_rent_period = $this->get_property_meta( 'property_com_rent_period' );
 			$rent_lease_type      =
 				! empty( $prop_com_rent_period ) ? epl_listing_load_meta_commercial_rent_period_value( $this->get_property_meta( 'property_com_rent_period' ) ) : __( 'P.A.', 'easy-property-listings' );
@@ -881,7 +903,7 @@ class EPL_Property_Meta {
 
 		$inspection_time = $this->get_property_meta( 'property_inspection_times' );
 		$inspection_time = trim( $inspection_time );
-		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type ) {
+		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type || 'business' === $this->post_type ) {
 			$price_sticker = '';
 			if ( 'sold' === $this->get_property_meta( 'property_status' ) ) {
 				$price_sticker .= '<span class="status-sticker sold">' . $this->label_sold . '</span>';
@@ -917,7 +939,7 @@ class EPL_Property_Meta {
 					$price_sticker .= '<span class="status-sticker open">' . $this->get_epl_settings( 'label_home_open' ) . '</span>';
 				}
 			}
-		} elseif ( 'commercial' === $this->post_type || 'business' === $this->post_type || 'commercial_land' === $this->post_type ) {
+		} elseif ( 'commercial' === $this->post_type || 'commercial_land' === $this->post_type ) {
 			$price_sticker = '';
 			if ( 'sold' === $this->get_property_meta( 'property_status' ) ) {
 				$price_sticker .= '<span class="status-sticker sold">' . $this->label_sold . '</span>';
@@ -945,7 +967,7 @@ class EPL_Property_Meta {
 		$price_display = $this->get_property_price_display();
 		$l_price       = '';
 
-		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type ) {
+		if ( 'property' === $this->post_type || 'land' === $this->post_type || 'rural' === $this->post_type || 'business' === $this->post_type ) {
 			if ( 'sold' === $this->get_property_meta( 'property_status' ) ) {
 				$l_price = '<li class="page-price sold-status">' . $this->label_sold . '</li>';
 			} elseif ( ! empty( $price_display ) && 'yes' === $this->get_property_meta( 'property_price_display' ) ) {   // Property.
@@ -972,7 +994,7 @@ class EPL_Property_Meta {
 				$l_price = '<li class="page-price sold-status">' . $this->label_leased . '</li>';
 
 			}
-		} elseif ( 'commercial' === $this->post_type || 'business' === $this->post_type || 'commercial_land' === $this->post_type ) {
+		} elseif ( 'commercial' === $this->post_type || 'commercial_land' === $this->post_type ) {
 			$prop_com_rent_period = $this->get_property_meta( 'property_com_rent_period' );
 			$prop_com_rent        = $this->get_property_com_rent();
 			$rent_lease_type      =
@@ -1224,15 +1246,13 @@ class EPL_Property_Meta {
 	 * @since 2.0
 	 * @param string $returntype Options i = span, v = raw value, t = text, d = string, l = list item, s = svg icon.
 	 * @return string
+	 * @since 3.4.20 New filter epl_total_parking_spaces for value.
+	 * @since 3.4.21 Removed first check.
 	 */
 	public function get_property_parking( $returntype = 'i' ) {
 
 		$prop_garage  = $this->get_property_meta( 'property_garage' );
 		$prop_carport = $this->get_property_meta( 'property_carport' );
-
-		if ( empty( $prop_garage ) && empty( $prop_carport ) ) {
-			return;
-		}
 
 		$returntype = 'i' === $returntype && epl_get_option( 'epl_icons_svg_listings' ) === 'on' ? 's' : $returntype;
 		$returntype = apply_filters( 'epl_get_property_parking_spaces_return_type', $returntype );
@@ -1240,6 +1260,7 @@ class EPL_Property_Meta {
 		$property_garage  = intval( $this->get_property_meta( 'property_garage' ) );
 		$property_carport = intval( $this->get_property_meta( 'property_carport' ) );
 		$value            = $property_carport + $property_garage;
+		$value            = apply_filters( 'epl_total_parking_spaces', $value );
 
 		if ( 0 === $value ) {
 			return;

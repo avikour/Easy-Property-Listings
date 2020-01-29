@@ -68,6 +68,18 @@ function epl_is_genesis_framework_theme() {
 }
 
 /**
+ * Determine if TwentyTwenty is loaded
+ *
+ * @since 3.4.14
+ */
+function epl_is_twenty_twenty_theme() {
+	if ( function_exists( 'twentytwenty_theme_support' ) ) {
+		return true;
+	}
+	return false;
+}
+
+/**
  * Used in the widgets by appending the registered image sizes
  *
  * @since 1.0
@@ -110,7 +122,9 @@ function epl_remote_url_get( $url ) {
  * @param string $post_type Post type name.
  * @param string $post_type_label Post type label.
  * @param array  $args Arguments.
- * @since 1.0
+ *
+ * @since 1.0.0
+ * @since 3.4.20 flush permalinks after new settings are saved.
  */
 function epl_register_post_type( $post_type = '', $post_type_label, $args = array() ) {
 	if ( empty( $post_type ) ) {
@@ -133,7 +147,7 @@ function epl_register_post_type( $post_type = '', $post_type_label, $args = arra
 	}
 
 	if ( isset( $_REQUEST['action'] ) && 'epl_settings' === $_REQUEST['action'] ) { //phpcs:ignore
-		$_SESSION['epl_actions']['epl_flush_rewrite_rules'] = true;
+		update_option( 'epl_rewrite_rules', false );
 	}
 }
 
@@ -477,7 +491,7 @@ function epl_get_the_status( $post = 0 ) {
  * @since 1.0
  * @param string $post_ID The post ID.
  * @param string $meta_key Meta key name.
- * @return the string/list for values
+ * @return string Value.
  */
 function epl_get_property_meta( $post_ID = '', $meta_key = '' ) {
 
@@ -509,7 +523,7 @@ function epl_the_property_meta( $post_ID = '', $meta_key ) {
  * Taxonomy Location Label
  *
  * @since 1.0
- * @return all the settings in array
+ * @return string Location label.
  */
 function epl_tax_location_label() {
 	$label_location = '';
@@ -518,7 +532,7 @@ function epl_tax_location_label() {
 		$label_location = trim( $epl_settings['label_location'] );
 	}
 	if ( empty( $label_location ) ) {
-		$label_location = 'City';
+		$label_location = __( 'City', 'easy-property-listings' );
 	}
 	return $label_location;
 }
@@ -527,7 +541,7 @@ function epl_tax_location_label() {
  * Location Label
  *
  * @since 1.0
- * @return all the settings in array
+ * @return string Location label.
  */
 function epl_meta_location_label() {
 	$label_location = '';
@@ -604,7 +618,7 @@ function epl_get_the_under_offer( $post = 0 ) {
  * Under Offer Label
  *
  * @since 2.1
- * @return label
+ * @return string
  */
 function epl_meta_under_offer_label() {
 	$under_offer = '';
@@ -622,7 +636,7 @@ function epl_meta_under_offer_label() {
  * House Categories Options
  *
  * @since 1.1
- * @return all the categories in array
+ * @return array Categories in array.
  */
 function epl_listing_load_meta_property_category() {
 	$defaults = array(
@@ -651,7 +665,7 @@ function epl_listing_load_meta_property_category() {
  *
  * @since 1.1
  * @param string $key Meta key.
- * @return all the categories in array
+ * @return string the categories in array
  */
 function epl_listing_meta_property_category_value( $key ) {
 	$array  = epl_listing_load_meta_property_category();
@@ -670,7 +684,7 @@ function epl_listing_meta_property_category_value( $key ) {
  * Custom Meta: Land Categories
  *
  * @since 1.1
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_load_meta_land_category() {
 	$defaults = array(
@@ -685,7 +699,7 @@ function epl_listing_load_meta_land_category() {
  *
  * @since 1.1
  * @param string $key Meta key.
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_meta_land_category_value( $key ) {
 	$array = epl_listing_load_meta_land_category();
@@ -698,7 +712,7 @@ function epl_listing_meta_land_category_value( $key ) {
  * Custom Meta: Commercial Categories
  *
  * @since 1.1
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_load_meta_commercial_category() {
 	$defaults = array(
@@ -720,7 +734,7 @@ function epl_listing_load_meta_commercial_category() {
  *
  * @since 1.1
  * @param string $key Meta key.
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_load_meta_commercial_category_value( $key ) {
 	$array = epl_listing_load_meta_commercial_category();
@@ -742,7 +756,7 @@ function epl_listing_load_meta_commercial_category_value( $key ) {
  * Custom Meta: Commercial Rental Period
  *
  * @since 2.1
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_load_meta_commercial_rent_period() {
 	$defaults = array(
@@ -759,7 +773,7 @@ function epl_listing_load_meta_commercial_rent_period() {
  *
  * @since 2.1
  * @param string $key Meta key.
- * @return all the categories in array
+ * @return array the categories in array
  */
 function epl_listing_load_meta_commercial_rent_period_value( $key ) {
 	$array = epl_listing_load_meta_commercial_rent_period();
@@ -812,15 +826,20 @@ function epl_listing_load_meta_rural_category_value( $key ) {
  *
  * @since 1.2
  * @param string $date Date.
- * @return formatted date
+ * @return string formatted date
  * @revised 3.3
  */
 function epl_feedsync_format_date( $date ) {
 	$date_example = '2014-07-22-16:45:56';
 
 	$tempdate = explode( '-', $date );
-	$date     = $tempdate[0] . '-' . $tempdate[1] . '-' . $tempdate[2];
-
+	$date     = $tempdate[0];
+	if ( isset( $tempdate[1] ) ) {
+		$date .= '-' . $tempdate[1];
+	}
+	if ( isset( $tempdate[2] ) ) {
+		$date .= '-' . $tempdate[2];
+	}
 	if ( isset( $tempdate[3] ) ) {
 		$date .= ' ' . $tempdate[3];
 	}
@@ -838,7 +857,7 @@ function epl_feedsync_format_date( $date ) {
  * @since 3.1.7
  * @param string $date Date.
  * @param string $time Time.
- * @return formatted date
+ * @return string formatted date
  */
 function epl_feedsync_format_date_auction( $date, $time ) {
 
@@ -856,7 +875,7 @@ function epl_feedsync_format_date_auction( $date, $time ) {
  *
  * @since 1.3
  * @param string $sub_value Address sub value.
- * @return formatted sub number/
+ * @return string formatted sub number/
  */
 function epl_feedsync_format_sub_number( $sub_value ) {
 	if ( $sub_value ) {
@@ -2108,29 +2127,6 @@ AND p.post_type IN $type_str
 }
 
 /**
- * Session Start
- *
- * @since 3.0
- */
-function epl_session_start() {
-	if ( ! session_id() ) {
-		session_start();
-	}
-}
-add_action( 'init', 'epl_session_start', 1 );
-
-/**
- * Session End
- *
- * @since 3.0
- */
-function epl_session_end() {
-	session_destroy();
-}
-add_action( 'wp_logout', 'epl_session_end' );
-add_action( 'wp_login', 'epl_session_end' );
-
-/**
  * Get Sales Count By Date
  *
  * @param int  $day Day number.
@@ -2461,10 +2457,16 @@ function epl_parse_atts( $atts ) {
 
 						$this_query['value'] =
 						array_map( 'trim', explode( ',', $this_query['value'] ) );
+
+						if ( in_array( $look_for, array( '_between', '_not_between' ), true ) ) {
+
+							if( is_numeric( $this_query['value'][0] ) ) {
+								$this_query['type'] = 'numeric';
+							}
+						}
 					}
 
 					if ( in_array( $look_for, array( '_exists', '_not_exists' ), true ) ) {
-
 						unset( $this_query['value'] );
 					}
 				}
@@ -2696,6 +2698,10 @@ function epl_get_author_id_from_name( $author ) {
 function epl_pmxi_import_post_saved( $id ) {
 
 	$post = get_post( $id );
+
+	if( is_null( $post ) ){
+		return;
+	}
 
 	if ( is_epl_post( $post->post_type ) ) {
 

@@ -5,8 +5,8 @@ Contributors: mervb1
 Donate link: https://easypropertylistings.com.au/support-the-site/
 Tags: real estate, property, listings, CRM, contact management, reports
 Requires at least: 3.9
-Tested up to: 5.2.3
-Stable Tag: 3.4.6
+Tested up to: 5.3.2
+Stable Tag: 3.4.21
 License: GNU Version 2 or Any Later Version
 
 Fast. Flexible. Forward-thinking solution for real estate agents using WordPress. Built for scale, listing management, contact generation and works with any theme.
@@ -235,11 +235,15 @@ More information at [Easy Property Listings.com.au](https://easypropertylistings
 
 **Follow this plugin on [GitHub](https://github.com/easypropertylistings/Easy-Property-Listings)**
 
+**Inspections**
+
+With the [inspections](https://easypropertylistings.com.au/extensions/inspections/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_inspections) extension for Easy Property Listings adds open for inspection lists (stock lists) and printing capabilities to your site.
+
 **Advanced Mapping**
 
 [Advanced Map](https://easypropertylistings.com.au/extensions/advanced-mapping/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_advanced_map) Create a beautiful map showcasing your listings with a powerful shortcode.
 
-**Brochures and Stock List Extension**
+**Brochures**
 
 With the [brochures](https://easypropertylistings.com.au/extensions/brochures/?utm_source=readme&utm_medium=description_tab&utm_content=extensions_link&utm_campaign=epl_extension_brochures) extension for Easy Property Listings you can create printable brochures and stock lists for your listings. There are several options to control the brochure styles and templates. Or create your own!
 
@@ -392,6 +396,88 @@ Yes, through the addition of one or more of the add-on integrations, you can qui
 8. Home open shortcode and Multi Author widget
 
 == Changelog ==
+
+= 3.4.21 January 22, 2020 =
+
+* Tweak: Corrected the new parking filter.
+
+= 3.4.20 January 22, 2020 =
+
+* New: Filter epl_total_parking_spaces added to the parking spaces function allowing you to alter the total value of the parking icons.
+* New: Helper epl_get_post_id_from_unique_id function to get the WordPress post id from the property_unique_id field.
+* Tweak: Better flushing of permalinks when settings are saved or on install.
+
+= 3.4.19 December 19, 2019 =
+
+* New: Added epl_recent_property_widget_default_args and epl_recent_property_widget_query filters for defaults and query args making targeting widget query easier in pre_get_posts.
+* Tweak: Updated to new html structure for fields using html lists in new custom post types for extensions.
+* Tweak: Removed article wrapper from Divi Template.
+
+= 3.4.18 December 10, 2019 =
+
+* Tweak: Added a wrapper css class epl-section-map to the default map output wrapper.
+* Fix: Internal help page video link was not working correctly for Adding Listing.
+
+= 3.4.17 December 2, 2019 =
+
+* Tweak: Moved Readme widget option to appear before the Read me label.
+* Tweak: Wrapper for wp_doing_ajax with fallback for 3.7 versions of WordPress or lower.
+* Fix: SVG filtering now allows circle tag correcting issue with LinkedIn icon missing a dot.
+* Fix: Empty values not getting saved for decimals and numbers.
+
+= 3.4.16 November 25, 2019 =
+
+* Fix: Added check for post type in epl_admin_posts_filter to avoid conflict with other plugins like ninja forms.
+* Fix: Filter by property author now shows results for both primary and secondary author.
+
+= 3.4.15 November 21, 2019 =
+
+* New: Migrated from PHP Session to WP Session to prevent WordPress > Tools > Site Health REST API error.
+* Fix: City label missing translation string.
+
+= 3.4.14 November 13, 2019 =
+
+* New: Support for WordPress 5.3 TwentyTwenty theme.
+* Fix: Custom additional features hook corrected as custom features were outputting incorrectly.
+
+= 3.4.13 November 11, 2019 =
+
+* Tweak: Listing widget: Custom template display, file extension no longer required and file name format enforced to the format widget-content-listing-{template_name}.php
+* Tweak: CSS convert helper grid class to inline-block instead of float left.
+* Fix: Search was not searching correctly when no post type was set.
+* Fix: Listing Widget bed/bath only icons SVG output.
+
+= 3.4.12 November 1, 2019 =
+
+* Fix: Loading admin css and js on appearance > widgets screens.
+
+= 3.4.11 October 30, 2019 =
+
+* Fix: Empty check in date function to prevent notice errors during listing imports.
+* Fix: Index check in iCal function and additional check to avoid notices.
+
+= 3.4.10 October 23, 2019 =
+
+* Fix: Shortcodes [listing_category] and [listing_advanced] when using numbers to filter ranges. e.g. category_compare="BETWEEN" and NOT_BETWEEN.
+* Fix: Issue with listings dashboard widget when no post types are active.
+
+= 3.4.9 September 17, 2019 =
+
+* New: Added the listing URL to the iCal card.
+* New: Enhanced the epl_property_address action hook to support multiple address parameters to easier control output in templates.
+* New: Enhanced the epl_property_category action hook to support tag and class that is passed through in templates.
+* Fix: iCal inspection time cards were trimming the description.
+
+= 3.4.8 September 16, 2019 =
+
+* Tweak: Added filter to optionally control separator output to appear after suburb with epl_property_address_separator_suburb or after the city with the epl_property_address_separator_city filter.
+* Fix: Correction to address separator placement that appeared after suburb in some cases.
+* Fix: Passing the third link parameter to the feature image through a hook has been corrected.
+
+= 3.4.7 September 16, 2019 =
+
+* Tweak: Whitelist use tag for SVG usage.
+* Fix: Correct business listing type pricing display, behaves like listing for sale.
 
 = 3.4.6 September 9, 2019 =
 
