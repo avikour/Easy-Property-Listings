@@ -4,7 +4,7 @@
  *
  * @package     EPL
  * @subpackage  Admin/Menus
- * @copyright   Copyright (c) 2019, Merv Barrett
+ * @copyright   Copyright (c) 2020, Merv Barrett
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       2.0
  */
@@ -65,7 +65,6 @@ if ( isset( $_REQUEST['action'] ) && 'epl_settings' === $_REQUEST['action'] ) {
 			}
 
 			// Adding some way for dynamic fields to be added to epl_settings array.
-
 			// Settings page params.
 			$page_params = apply_filters( 'epl_settings_page_params', array( 'tab', 'page', 'sub_tab', 'action', 'submit' ) );
 
